@@ -1,0 +1,233 @@
+name: Conferência de Rodada TCC Unifal
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+on:
+  workflow_dispatch:
+    inputs:
+      rodada:
+        description: "Rodada a conferir"
+        required: true
+        default: "r00"
+        type: choice
+        options:
+          - r00
+          - r01
+          - r02
+          - r03
+          - r04
+      anexo_letra:
+        description: "Letra do anexo a ser usada no relatório"
+        required: true
+        default: "B"
+        type: choice
+        options:
+          - B
+          - C
+          - D
+          - E
+          - F
+      falhar_se_reprovada:
+        description: "Marcar o workflow como falho se a conferência for reprovada?"
+        required: true
+        default: "nao"
+        type: choice
+        options:
+          - nao
+          - sim
+
+jobs:
+  gerar_relatorio_conferencia:
+    name: Gerar relatório da rodada ${{ inputs.rodada }} — Anexo ${{ inputs.anexo_letra }}
+    runs-on: self-hosted
+
+    env:
+      BD_HOST: ${{ secrets.BD_HOST }}
+      BD_PORTA: ${{ secrets.BD_PORTA }}
+      BD_NOME: ${{ secrets.BD_NOME }}
+      BD_USUARIO: ${{ secrets.BD_USUARIO }}
+      BD_SENHA: ${{ secrets.BD_SENHA }}
+
+      CAMINHO_PROCESSAMENTO_TCC: ${{ vars.CAMINHO_PROCESSAMENTO_TCC }}
+      CAMINHO_EVIDENCIAS_TCC: ${{ vars.CAMINHO_EVIDENCIAS_TCC }}
+      BD_TABELA_BASE_TCC: ${{ vars.BD_TABELA_BASE_TCC }}
+
+      RODADA: ${{ inputs.rodada }}
+      RODADA_ANALISADA: ${{ inputs.rodada }}
+      ANEXO_LETRA: ${{ inputs.anexo_letra }}
+      FALHAR_SE_REPROVADA: ${{ inputs.falhar_se_reprovada }}
+      LIMITE_FALHA_CRITICA: "0.05"
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Normalizar caminhos TCC
+        shell: bash
+        run: |
+          set -e
+
+          P="$(printf "%s" "${CAMINHO_PROCESSAMENTO_TCC}" | tr -d '\r\n' | sed 's/^[[:space:]]*//; s/[[:space:]]*$//')"
+          E="$(printf "%s" "${CAMINHO_EVIDENCIAS_TCC}" | tr -d '\r\n' | sed 's/^[[:space:]]*//; s/[[:space:]]*$//')"
+
+          if [[ -n "$P" && "$P" != /* ]]; then P="/$P"; fi
+          if [[ -n "$E" && "$E" != /* ]]; then E="/$E"; fi
+
+          P="${P%/}"
+          E="${E%/}"
+
+          echo "CAMINHO_PROCESSAMENTO_TCC=$P" >> "$GITHUB_ENV"
+          echo "CAMINHO_EVIDENCIAS_TCC=$E" >> "$GITHUB_ENV"
+          echo "CAMINHO_RELATORIO_CONFERENCIA=$E/relatorios_conferencia/${{ inputs.rodada }}" >> "$GITHUB_ENV"
+
+          echo "CAMINHO_PROCESSAMENTO_TCC normalizado: $P"
+          echo "CAMINHO_EVIDENCIAS_TCC normalizado: $E"
+          echo "CAMINHO_RELATORIO_CONFERENCIA: $E/relatorios_conferencia/${{ inputs.rodada }}"
+
+      - name: Verificar ambiente Python e PDF
+        shell: bash
+        run: |
+          set -e
+
+          VENV_DIR="${CAMINHO_PROCESSAMENTO_TCC}/venv_tcc"
+          if [ ! -x "$VENV_DIR/bin/python" ]; then
+            echo "ERRO: venv_tcc não encontrado ou python não executável em: $VENV_DIR"
+            exit 1
+          fi
+
+          "$VENV_DIR/bin/python" -V
+          "$VENV_DIR/bin/python" - <<'PY'
+          import pymysql
+          print('PyMySQL OK')
+          PY
+
+          if ! command -v pandoc >/dev/null 2>&1; then
+            echo "ERRO: pandoc não encontrado no servidor."
+            echo "Instale manualmente no servidor:"
+            echo "sudo apt-get install -y pandoc weasyprint fonts-liberation fonts-dejavu"
+            exit 1
+          fi
+
+          if ! command -v weasyprint >/dev/null 2>&1; then
+            echo "ERRO: weasyprint não encontrado no servidor."
+            echo "Instale manualmente no servidor:"
+            echo "sudo apt-get install -y pandoc weasyprint fonts-liberation fonts-dejavu"
+            exit 1
+          fi
+
+          pandoc --version | head -n 1
+          weasyprint --version
+
+      - name: Gerar relatório de conferência
+        shell: bash
+        run: |
+          set -e
+
+          VENV_DIR="${CAMINHO_PROCESSAMENTO_TCC}/venv_tcc"
+          mkdir -p "$CAMINHO_RELATORIO_CONFERENCIA"
+
+          "$VENV_DIR/bin/python" scripts/gerar_relatorio_conferencia_rodada.py
+
+          echo "Arquivos gerados em: $CAMINHO_RELATORIO_CONFERENCIA"
+          ls -la "$CAMINHO_RELATORIO_CONFERENCIA"
+
+      - name: Gerar PDF do relatório
+        shell: bash
+        run: |
+          set -e
+
+          RELATORIO_DIR="${CAMINHO_RELATORIO_CONFERENCIA}"
+          RODADA="${{ inputs.rodada }}"
+          ANEXO_SLUG="$(printf "%s" "${{ inputs.anexo_letra }}" | tr '[:upper:]' '[:lower:]')"
+
+          MD_LATEST="${RELATORIO_DIR}/anexo_${ANEXO_SLUG}_conferencia_${RODADA}.md"
+          PDF_LATEST="${RELATORIO_DIR}/anexo_${ANEXO_SLUG}_conferencia_${RODADA}.pdf"
+
+          if [ ! -f "$MD_LATEST" ]; then
+            echo "Arquivo Markdown não encontrado: $MD_LATEST"
+            echo "Arquivos disponíveis em $RELATORIO_DIR:"
+            ls -lah "$RELATORIO_DIR"
+            exit 1
+          fi
+
+          CSS_PRINT="${RELATORIO_DIR}/estilo_pdf.css"
+
+          cat > "$CSS_PRINT" <<'CSS'
+          @page {
+            size: A4;
+            margin: 2.5cm;
+          }
+
+          body {
+            font-family: "Arial", "Liberation Sans", "DejaVu Sans", sans-serif;
+            font-size: 11pt;
+            line-height: 1.35;
+          }
+
+          h1 {
+            font-size: 17pt;
+            line-height: 1.15;
+            margin-bottom: 0.7em;
+            font-weight: 700;
+          }
+
+          h2 {
+            font-size: 13.5pt;
+            margin-top: 1.2em;
+            margin-bottom: 0.5em;
+          }
+
+          h3 {
+            font-size: 11.5pt;
+            margin-top: 0.9em;
+            margin-bottom: 0.35em;
+          }
+
+          table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 9.5pt;
+            margin: 0.8em 0 1em 0;
+          }
+
+          th, td {
+            border: 1px solid #999;
+            padding: 4px 6px;
+            vertical-align: top;
+          }
+
+          th {
+            font-weight: 700;
+          }
+
+          code {
+            font-family: "DejaVu Sans Mono", monospace;
+            font-size: 90%;
+          }
+          CSS
+
+          pandoc "$MD_LATEST" \
+            -o "$PDF_LATEST" \
+            --pdf-engine=weasyprint \
+            --css "$CSS_PRINT" \
+            -V papersize=a4
+
+          TS="$(date '+%Y%m%d_%H%M%S')"
+          PDF_DATADO="${RELATORIO_DIR}/anexo_${ANEXO_SLUG}_conferencia_${RODADA}_${TS}.pdf"
+          cp "$PDF_LATEST" "$PDF_DATADO"
+
+          echo "PDF gerado:"
+          echo "$PDF_LATEST"
+          echo "$PDF_DATADO"
+
+          echo "Arquivos finais:"
+          ls -lah "$RELATORIO_DIR"
+
+      - name: Publicar relatório como artifact
+        uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: anexo-${{ inputs.anexo_letra }}-conferencia-${{ inputs.rodada }}
+          path: ${{ env.CAMINHO_RELATORIO_CONFERENCIA }}/*
+          if-no-files-found: error
+          retention-days: 30

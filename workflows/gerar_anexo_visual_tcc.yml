@@ -1,0 +1,167 @@
+name: Gerar Anexo Visual TCC
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+on:
+  workflow_dispatch:
+    inputs:
+      rotulo_execucao:
+        description: "Rótulo da execução"
+        required: true
+        default: "anexo_visual_tcc"
+      modo_fila:
+        description: "Gerar PDF com todos os municípios ou apenas primeiros N"
+        required: true
+        default: "primeiros_n"
+        type: choice
+        options:
+          - primeiros_n
+          - todos
+      primeiros_n:
+        description: "Quantidade de municípios para teste, se modo_fila=primeiros_n"
+        required: true
+        default: "5"
+      nome_arquivo:
+        description: "Nome base do PDF e CSV gerados"
+        required: true
+        default: "anexo_a_evidencias_visuais_amostra"
+      falhar_se_inconsistente:
+        description: "Interromper se faltar imagem ou houver duplicidade"
+        required: true
+        default: "sim"
+        type: choice
+        options:
+          - sim
+          - nao
+      compactar_imagens_pdf:
+        description: "Converter imagens temporariamente para JPEG no PDF"
+        required: true
+        default: "sim"
+        type: choice
+        options:
+          - sim
+          - nao
+      qualidade_jpeg:
+        description: "Qualidade JPEG usada no PDF, se compactar_imagens_pdf=sim"
+        required: true
+        default: "80"
+      largura_maxima_imagem_pdf:
+        description: "Largura máxima da imagem embutida no PDF. Use 0 para não redimensionar."
+        required: true
+        default: "0"
+
+jobs:
+  gerar_anexo:
+    runs-on: self-hosted
+
+    env:
+      BD_HOST: ${{ secrets.BD_HOST }}
+      BD_PORTA: ${{ secrets.BD_PORTA }}
+      BD_NOME: ${{ secrets.BD_NOME }}
+      BD_USUARIO: ${{ secrets.BD_USUARIO }}
+      BD_SENHA: ${{ secrets.BD_SENHA }}
+
+      BD_TABELA_BASE_TCC: ${{ vars.BD_TABELA_BASE_TCC }}
+      CAMINHO_PROCESSAMENTO_TCC: ${{ vars.CAMINHO_PROCESSAMENTO_TCC }}
+      CAMINHO_EVIDENCIAS_TCC: ${{ vars.CAMINHO_EVIDENCIAS_TCC }}
+
+      ROTULO_EXECUCAO: ${{ inputs.rotulo_execucao }}
+      MODO_FILA: ${{ inputs.modo_fila }}
+      PRIMEIROS_N: ${{ inputs.primeiros_n }}
+      NOME_ARQUIVO: ${{ inputs.nome_arquivo }}
+      FALHAR_SE_INCONSISTENTE: ${{ inputs.falhar_se_inconsistente }}
+      COMPACTAR_IMAGENS_PDF: ${{ inputs.compactar_imagens_pdf }}
+      QUALIDADE_JPEG: ${{ inputs.qualidade_jpeg }}
+      LARGURA_MAXIMA_IMAGEM_PDF: ${{ inputs.largura_maxima_imagem_pdf }}
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Normalizar caminhos
+        shell: bash
+        run: |
+          set -e
+
+          P="$(printf "%s" "${CAMINHO_PROCESSAMENTO_TCC}" | tr -d '\r\n' | sed 's/^[[:space:]]*//; s/[[:space:]]*$//')"
+          E="$(printf "%s" "${CAMINHO_EVIDENCIAS_TCC}" | tr -d '\r\n' | sed 's/^[[:space:]]*//; s/[[:space:]]*$//')"
+
+          if [[ -n "$P" && "$P" != /* ]]; then P="/$P"; fi
+          if [[ -n "$E" && "$E" != /* ]]; then E="/$E"; fi
+
+          {
+            echo "CAMINHO_PROCESSAMENTO_TCC<<EOF"
+            echo "$P"
+            echo "EOF"
+            echo "CAMINHO_EVIDENCIAS_TCC<<EOF"
+            echo "$E"
+            echo "EOF"
+          } >> "$GITHUB_ENV"
+
+          echo "CAMINHO_PROCESSAMENTO_TCC: $P"
+          echo "CAMINHO_EVIDENCIAS_TCC: $E"
+
+      - name: Acordar disco e garantir diretórios
+        shell: bash
+        run: |
+          set -e
+
+          echo "Tocando volume..."
+          ls -ld "${CAMINHO_PROCESSAMENTO_TCC}"
+          ls -ld "${CAMINHO_EVIDENCIAS_TCC}"
+
+          mkdir -p "${CAMINHO_EVIDENCIAS_TCC}/pdf_anexos"
+
+          echo "Conferindo pasta de consolidadas..."
+          ls -ld "${CAMINHO_EVIDENCIAS_TCC}/capturas_homepages/consolidadas"
+
+      - name: Verificar ambiente Python TCC
+        shell: bash
+        run: |
+          set -e
+
+          VENV="${CAMINHO_PROCESSAMENTO_TCC}/venv_tcc"
+
+          if [ ! -d "$VENV" ]; then
+            echo "ERRO: ambiente virtual não encontrado: $VENV"
+            exit 1
+          fi
+
+          source "$VENV/bin/activate"
+
+          python --version
+          python - <<'PY'
+          import pymysql
+          import PIL
+          import reportlab
+          print("Dependências OK: pymysql, pillow, reportlab")
+          PY
+
+      - name: Gerar anexo visual
+        shell: bash
+        run: |
+          set -e
+
+          source "${CAMINHO_PROCESSAMENTO_TCC}/venv_tcc/bin/activate"
+
+          python scripts/gerar_anexo_visual_tcc.py
+
+      - name: Listar arquivos gerados
+        shell: bash
+        run: |
+          set -e
+
+          echo "Arquivos gerados em pdf_anexos:"
+          find "${CAMINHO_EVIDENCIAS_TCC}/pdf_anexos" -maxdepth 1 -type f \
+            \( -iname "*.pdf" -o -iname "*.csv" \) \
+            -printf "%TY-%Tm-%Td %TH:%TM  %s bytes  %p\n" \
+            | sort
+
+      - name: Publicar PDF e conferência como artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: anexo-visual-tcc-${{ inputs.rotulo_execucao }}
+          path: |
+            ${{ env.CAMINHO_EVIDENCIAS_TCC }}/pdf_anexos/${{ inputs.nome_arquivo }}_*.pdf
+            ${{ env.CAMINHO_EVIDENCIAS_TCC }}/pdf_anexos/${{ inputs.nome_arquivo }}_*_conferencia.csv
+          if-no-files-found: error

@@ -1,0 +1,483 @@
+name: Validação TCC Unifal
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+on:
+  workflow_dispatch:
+    inputs:
+      rotulo_sessao:
+        description: "Rótulo da sessão"
+        required: true
+        default: "validacao_tcc_unifal"
+      rodada:
+        description: "Rodada da coleta"
+        required: true
+        default: "r00"
+        type: choice
+        options:
+          - r00
+          - r01
+          - r02
+          - r03
+          - r04
+      ferramenta:
+        description: "Qual ferramenta executar"
+        required: true
+        default: "ambos"
+        type: choice
+        options:
+          - ambos
+          - ama
+          - access
+      modo_fila:
+        description: "Como montar a fila"
+        required: true
+        default: "primeiros_n"
+        type: choice
+        options:
+          - tudo
+          - primeiros_n
+      primeiros_n:
+        description: "Se modo_fila=primeiros_n, quantos municípios pegar"
+        required: true
+        default: "10"
+      modo_execucao:
+        description: "Critério de seleção na rodada"
+        required: true
+        default: "fila_completa"
+        type: choice
+        options:
+          - pendencias
+          - fila_completa
+          - reprocessar
+      max_parallel:
+        description: "Máximo de municípios em paralelo"
+        required: true
+        default: "3"
+
+jobs:
+  preparar_fila:
+    runs-on: self-hosted
+    outputs:
+      grupos: ${{ steps.fila.outputs.grupos }}
+      grupos_count: ${{ steps.fila.outputs.grupos_count }}
+      sessao: ${{ steps.sessao.outputs.sessao }}
+      rodada: ${{ steps.rodada.outputs.rodada }}
+      ferramenta: ${{ steps.ferr.outputs.ferramenta }}
+    env:
+      BD_HOST: ${{ secrets.BD_HOST }}
+      BD_PORTA: ${{ secrets.BD_PORTA }}
+      BD_NOME: ${{ secrets.BD_NOME }}
+      BD_USUARIO: ${{ secrets.BD_USUARIO }}
+      BD_SENHA: ${{ secrets.BD_SENHA }}
+
+      CAMINHO_PROCESSAMENTO_TCC: ${{ vars.CAMINHO_PROCESSAMENTO_TCC }}
+      CAMINHO_EVIDENCIAS_TCC: ${{ vars.CAMINHO_EVIDENCIAS_TCC }}
+      BD_TABELA_BASE_TCC: ${{ vars.BD_TABELA_BASE_TCC }}
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Normalizar caminhos TCC
+        shell: bash
+        run: |
+          set -e
+
+          P="$(printf "%s" "${CAMINHO_PROCESSAMENTO_TCC}" | tr -d '\r\n' | sed 's/^[[:space:]]*//; s/[[:space:]]*$//')"
+          E="$(printf "%s" "${CAMINHO_EVIDENCIAS_TCC}" | tr -d '\r\n' | sed 's/^[[:space:]]*//; s/[[:space:]]*$//')"
+
+          if [[ -n "$P" && "$P" != /* ]]; then P="/$P"; fi
+          if [[ -n "$E" && "$E" != /* ]]; then E="/$E"; fi
+
+          P="${P%/}"
+          E="${E%/}"
+
+          {
+            echo "CAMINHO_PROCESSAMENTO_TCC<<EOF"
+            echo "$P"
+            echo "EOF"
+            echo "CAMINHO_EVIDENCIAS_TCC<<EOF"
+            echo "$E"
+            echo "EOF"
+          } >> "$GITHUB_ENV"
+
+          echo "CAMINHO_PROCESSAMENTO_TCC normalizado: $P"
+          echo "CAMINHO_EVIDENCIAS_TCC normalizado: $E"
+
+      - name: Acordar disco do TCC
+        shell: bash
+        run: |
+          set -e
+          echo "Tocando volume de processamento..."
+          ls -ld "${CAMINHO_PROCESSAMENTO_TCC}" || true
+          ls -ld "$(dirname "${CAMINHO_PROCESSAMENTO_TCC}")" || true
+          echo "Tocando volume de evidências..."
+          ls -ld "${CAMINHO_EVIDENCIAS_TCC}" || true
+          ls -ld "$(dirname "${CAMINHO_EVIDENCIAS_TCC}")" || true
+          sleep 2
+
+      - name: Definir sessão
+        id: sessao
+        shell: bash
+        run: |
+          set -e
+          TS="$(date +'%Y-%m-%d_%H-%M-%S')"
+          ROT="$(printf "%s" "${{ inputs.rotulo_sessao }}" | tr -d '\r\n' | sed 's/^[[:space:]]*//; s/[[:space:]]*$//')"
+          SESSAO="${TS}__${ROT}"
+          echo "Sessão: $SESSAO"
+          echo "sessao=$SESSAO" >> "$GITHUB_OUTPUT"
+
+      - name: Definir rodada
+        id: rodada
+        shell: bash
+        run: |
+          set -e
+          R="${{ inputs.rodada }}"
+          case "$R" in
+            r00|r01|r02|r03|r04) ;;
+            *) echo "Rodada inválida: $R"; exit 1 ;;
+          esac
+          echo "Rodada: $R"
+          echo "rodada=$R" >> "$GITHUB_OUTPUT"
+
+      - name: Definir ferramenta
+        id: ferr
+        shell: bash
+        run: |
+          set -e
+          V="${{ inputs.ferramenta }}"
+          case "$V" in
+            ambos|ama|access) ;;
+            *) echo "Ferramenta inválida: $V"; exit 1 ;;
+          esac
+          echo "Ferramenta: $V"
+          echo "ferramenta=$V" >> "$GITHUB_OUTPUT"
+
+      - name: Montar fila via BD
+        id: fila
+        shell: bash
+        run: |
+          set -e
+
+          if ! command -v jq >/dev/null 2>&1; then
+            echo "ERRO: jq não encontrado no runner."
+            exit 1
+          fi
+          if ! command -v mysql >/dev/null 2>&1; then
+            echo "ERRO: mysql-client não encontrado no runner."
+            exit 1
+          fi
+
+          TBASE="${BD_TABELA_BASE_TCC:-tcc_unifal_base_amostral}"
+          RODADA="${{ inputs.rodada }}"
+          FERR="${{ inputs.ferramenta }}"
+          MODO="${{ inputs.modo_execucao }}"
+          MODO_FILA="${{ inputs.modo_fila }}"
+          N="${{ inputs.primeiros_n }}"
+
+          case "$N" in
+            ''|*[!0-9]*) N=1 ;;
+          esac
+          if [ "$N" -lt 1 ]; then N=1; fi
+
+          WHERE_EXTRA=""
+          if [ "$MODO" = "pendencias" ]; then
+            case "$FERR" in
+              ama)
+                WHERE_EXTRA="AND (e.id_execucao IS NULL OR e.nota_amaweb IS NULL)"
+                ;;
+              access)
+                WHERE_EXTRA="AND (e.id_execucao IS NULL OR e.nota_accessmonitor IS NULL)"
+                ;;
+              ambos|*)
+                WHERE_EXTRA="AND (e.id_execucao IS NULL OR e.nota_amaweb IS NULL OR e.nota_accessmonitor IS NULL)"
+                ;;
+            esac
+          fi
+
+          LIMIT_SQL=""
+          if [ "$MODO_FILA" = "primeiros_n" ]; then
+            LIMIT_SQL="LIMIT $N"
+          fi
+
+          Q="SELECT
+                b.codigo_municipio_completo,
+                b.url,
+                b.nome_municipio,
+                b.nome_uf,
+                b.regiao
+             FROM \`${TBASE}\` b
+             LEFT JOIN \`tcc_unifal_execucoes\` e
+                    ON e.codigo_municipio_completo = b.codigo_municipio_completo
+                   AND e.rodada = '${RODADA}'
+             WHERE b.url IS NOT NULL
+               AND TRIM(b.url) <> ''
+               ${WHERE_EXTRA}
+             ORDER BY b.regiao, b.nome_uf, b.nome_municipio
+             ${LIMIT_SQL};"
+
+          echo "Montando fila: rodada=$RODADA ferramenta=$FERR modo=$MODO modo_fila=$MODO_FILA limite=$LIMIT_SQL"
+
+          mysql -N -B --default-character-set=utf8mb4 \
+            -h "$BD_HOST" -P "$BD_PORTA" -u "$BD_USUARIO" -p"$BD_SENHA" "$BD_NOME" \
+            -e "$Q" > fila.tsv
+
+          if [ ! -s fila.tsv ]; then
+            echo "Nenhum município na fila."
+            GRUPOS="[]"
+          else
+            GRUPOS="$(jq -R -s -c '
+              split("\n")
+              | map(select(length > 0))
+              | map(split("\t") | {
+                  codigo: .[0],
+                  url: .[1],
+                  municipio: .[2],
+                  uf: .[3],
+                  regiao: .[4]
+                })
+              | group_by(.regiao)
+              | map({
+                  regiao: .[0].regiao,
+                  nome_job: ("Região " + .[0].regiao + " (" + (length | tostring) + " municípios)"),
+                  itens: .
+                })
+            ' fila.tsv)"
+          fi
+
+          COUNT="$(printf "%s" "$GRUPOS" | jq 'length')"
+          echo "Total na fila: $COUNT"
+          echo "$GRUPOS" | jq .
+
+          echo "grupos=$GRUPOS" >> "$GITHUB_OUTPUT"
+          echo "grupos_count=$COUNT" >> "$GITHUB_OUTPUT"
+
+  processar:
+    name: Processar ${{ matrix.grupo.nome_job }}
+    needs: preparar_fila
+    runs-on: self-hosted
+    if: ${{ needs.preparar_fila.outputs.grupos_count != '0' }}
+    strategy:
+      fail-fast: false
+      max-parallel: ${{ fromJson(inputs.max_parallel) }}
+      matrix:
+        grupo: ${{ fromJson(needs.preparar_fila.outputs.grupos) }}
+    env:
+      BD_HOST: ${{ secrets.BD_HOST }}
+      BD_PORTA: ${{ secrets.BD_PORTA }}
+      BD_NOME: ${{ secrets.BD_NOME }}
+      BD_USUARIO: ${{ secrets.BD_USUARIO }}
+      BD_SENHA: ${{ secrets.BD_SENHA }}
+
+      CAMINHO_PROCESSAMENTO_TCC: ${{ vars.CAMINHO_PROCESSAMENTO_TCC }}
+      CAMINHO_EVIDENCIAS_TCC: ${{ vars.CAMINHO_EVIDENCIAS_TCC }}
+      BD_TABELA_BASE_TCC: ${{ vars.BD_TABELA_BASE_TCC }}
+      CAMINHO_EXTENSAO_ACCESSMONITOR: ${{ vars.CAMINHO_EXTENSAO_ACCESSMONITOR }}
+
+      RODADA: ${{ needs.preparar_fila.outputs.rodada }}
+      SESSAO: ${{ needs.preparar_fila.outputs.sessao }}
+      FERRAMENTA: ${{ needs.preparar_fila.outputs.ferramenta }}
+      MODO_EXECUCAO: ${{ inputs.modo_execucao }}
+
+      MAX_TENTATIVAS: 3
+      TIMEOUT_TENTATIVA_SEGUNDOS: 180
+      ATRASO_ENTRE_TENTATIVAS_SEGUNDOS: 15
+      DELAY_ENTRE_FERRAMENTAS_SEGUNDOS: 10
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Normalizar caminhos TCC
+        shell: bash
+        run: |
+          set -e
+          P="$(printf "%s" "${CAMINHO_PROCESSAMENTO_TCC}" | tr -d '\r\n' | sed 's/^[[:space:]]*//; s/[[:space:]]*$//')"
+          E="$(printf "%s" "${CAMINHO_EVIDENCIAS_TCC}" | tr -d '\r\n' | sed 's/^[[:space:]]*//; s/[[:space:]]*$//')"
+          X="$(printf "%s" "${CAMINHO_EXTENSAO_ACCESSMONITOR:-}" | tr -d '\r\n' | sed 's/^[[:space:]]*//; s/[[:space:]]*$//')"
+          if [[ -n "$P" && "$P" != /* ]]; then P="/$P"; fi
+          if [[ -n "$E" && "$E" != /* ]]; then E="/$E"; fi
+          if [[ -n "$X" && "$X" != /* ]]; then X="/$X"; fi
+          P="${P%/}"; E="${E%/}"; X="${X%/}"
+          echo "CAMINHO_PROCESSAMENTO_TCC=$P" >> "$GITHUB_ENV"
+          echo "CAMINHO_EVIDENCIAS_TCC=$E" >> "$GITHUB_ENV"
+          echo "CAMINHO_EXTENSAO_ACCESSMONITOR=$X" >> "$GITHUB_ENV"
+
+      - name: Pré-checagens + Playwright install
+        shell: bash
+        run: |
+          set -e
+
+          if ! command -v jq >/dev/null 2>&1; then
+            echo "ERRO: jq não encontrado."
+            exit 1
+          fi
+          if ! command -v mysql >/dev/null 2>&1; then
+            echo "ERRO: mysql-client não encontrado."
+            exit 1
+          fi
+          if ! command -v xvfb-run >/dev/null 2>&1; then
+            echo "ERRO: xvfb-run não encontrado. Instale manualmente: sudo apt-get install -y xvfb"
+            exit 1
+          fi
+
+          VENV_DIR="${CAMINHO_PROCESSAMENTO_TCC}/venv_tcc"
+          if [ ! -x "$VENV_DIR/bin/python" ]; then
+            echo "ERRO: venv_tcc não encontrado ou python não executável em: $VENV_DIR"
+            exit 1
+          fi
+
+          chmod +x "$VENV_DIR/bin/"* || true
+          chmod +x "$VENV_DIR/lib/python3.12/site-packages/playwright/driver/node" || true
+
+          "$VENV_DIR/bin/python" -V
+          "$VENV_DIR/bin/python" -m playwright --version
+          "$VENV_DIR/bin/python" -m playwright install chromium
+
+      - name: Processar região
+        shell: bash
+        run: |
+          set -e
+          set -o pipefail
+
+          VENV_DIR="${CAMINHO_PROCESSAMENTO_TCC}/venv_tcc"
+          PY="$VENV_DIR/bin/python"
+
+          cat > grupo.json <<'JSON_GRUPO'
+          ${{ toJson(matrix.grupo) }}
+          JSON_GRUPO
+
+          REGIAO_JOB="$(jq -r '.regiao' grupo.json)"
+          TOTAL_REGIAO="$(jq -r '.itens | length' grupo.json)"
+
+          printf 'Processando região: %s\n' "$REGIAO_JOB"
+          printf 'Total de municípios na região: %s\n' "$TOTAL_REGIAO"
+
+          LOG_DIR="${CAMINHO_PROCESSAMENTO_TCC}/sessoes/${SESSAO}/logs"
+          mkdir -p "$LOG_DIR"
+
+          jq -c '.itens[]' grupo.json | while IFS= read -r ITEM; do
+            COD="$(printf '%s' "$ITEM" | jq -r '.codigo')"
+            URL="$(printf '%s' "$ITEM" | jq -r '.url')"
+            MUNICIPIO="$(printf '%s' "$ITEM" | jq -r '.municipio')"
+            UF="$(printf '%s' "$ITEM" | jq -r '.uf')"
+            REGIAO="$(printf '%s' "$ITEM" | jq -r '.regiao')"
+
+            printf 'Processando TCC — %s/%s — %s\n' "$MUNICIPIO" "$UF" "$COD"
+            printf 'URL: %s\n' "$URL"
+
+            LOG_FILE="${LOG_DIR}/${RODADA}_${COD}.log"
+
+            {
+              echo "=== INICIO TCC UNIFAL ==="
+              echo "sessao=$SESSAO"
+              echo "rodada=$RODADA"
+              echo "codigo_municipio_completo=$COD"
+              echo "municipio=$MUNICIPIO"
+              echo "uf=$UF"
+              echo "regiao=$REGIAO"
+              echo "url=$URL"
+              echo "ferramenta=$FERRAMENTA"
+              echo "data_utc=$(date -u '+%Y-%m-%dT%H:%M:%SZ')"
+              echo "runner=$(hostname)"
+              echo "========================="
+              echo
+            } >> "$LOG_FILE"
+
+            set +e
+            FERR="$FERRAMENTA" RODADA="$RODADA" SESSAO="$SESSAO" MODO_EXECUCAO="$MODO_EXECUCAO" \
+              xvfb-run -a --server-args="-screen 0 1366x900x24" \
+                "$PY" scripts/validar_links_tcc_unifal.py "$COD" "$URL" "$MUNICIPIO" "$UF" "$REGIAO" 2>&1 | tee -a "$LOG_FILE"
+            STATUS_PY=${PIPESTATUS[0]}
+            set -e
+
+            {
+              echo
+              echo "=== FIM TCC UNIFAL ==="
+              echo "codigo_municipio_completo=$COD"
+              echo "status_python=$STATUS_PY"
+              echo "data_utc=$(date -u '+%Y-%m-%dT%H:%M:%SZ')"
+              echo "======================="
+              echo
+            } >> "$LOG_FILE"
+
+            if [ "$STATUS_PY" -ne 0 ]; then
+              printf 'ERRO no município %s/%s (%s), seguindo para o próximo da região.\n' "$MUNICIPIO" "$UF" "$COD"
+            fi
+
+            sleep 2
+          done
+
+  finalizar_logs:
+    name: Consolidar log final da rodada
+    needs: [preparar_fila, processar]
+    runs-on: self-hosted
+    if: always()
+    env:
+      CAMINHO_PROCESSAMENTO_TCC: ${{ vars.CAMINHO_PROCESSAMENTO_TCC }}
+    steps:
+      - name: Normalizar CAMINHO_PROCESSAMENTO_TCC
+        shell: bash
+        run: |
+          set -e
+          P="$(printf "%s" "${CAMINHO_PROCESSAMENTO_TCC}" | tr -d '\r\n' | sed 's/^[[:space:]]*//; s/[[:space:]]*$//')"
+          if [[ -n "$P" && "$P" != /* ]]; then P="/$P"; fi
+          P="${P%/}"
+          echo "CAMINHO_PROCESSAMENTO_TCC=$P" >> "$GITHUB_ENV"
+          echo "CAMINHO_PROCESSAMENTO_TCC normalizado: $P"
+
+      - name: Definir sessão
+        shell: bash
+        run: |
+          set -e
+          SESSAO="${{ needs.preparar_fila.outputs.sessao }}"
+          if [ -z "$SESSAO" ]; then
+            echo "SESSAO vazio. Encerrando finalizar_logs sem consolidar."
+            exit 0
+          fi
+          echo "SESSAO=$SESSAO" >> "$GITHUB_ENV"
+          echo "Sessão: $SESSAO"
+
+      - name: Consolidar logs da rodada TCC
+        shell: bash
+        run: |
+          set -e
+
+          LOG_DIR="${CAMINHO_PROCESSAMENTO_TCC}/sessoes/${SESSAO}/logs"
+          mkdir -p "$LOG_DIR"
+
+          OUT="${LOG_DIR}/tcc_unifal_rodada_${SESSAO}.log"
+          echo "Gerando log consolidado: $OUT"
+
+          {
+            echo "=== LOG CONSOLIDADO DA RODADA - TCC UNIFAL ==="
+            echo "sessao=$SESSAO"
+            echo "data_utc=$(date -u '+%Y-%m-%dT%H:%M:%SZ')"
+            echo "runner=$(hostname)"
+            echo
+            echo "=== ARQUIVOS EM ${LOG_DIR} ==="
+            ls -la "$LOG_DIR" || true
+            echo
+            echo "=== CONTEUDO DOS LOGS ==="
+          } > "$OUT"
+
+          for f in "$LOG_DIR"/*.log; do
+            [ -f "$f" ] || continue
+            [ "$f" = "$OUT" ] && continue
+            echo >> "$OUT"
+            echo "----- $(basename "$f") -----" >> "$OUT"
+            cat "$f" >> "$OUT"
+          done
+
+          HIST="${CAMINHO_PROCESSAMENTO_TCC}/logs_historicos"
+          mkdir -p "$HIST"
+          cp -f "$OUT" "$HIST/"
+          echo "Cópia em: $HIST/$(basename "$OUT")"
+
+      - uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: log-tcc-unifal-${{ env.SESSAO }}
+          path: ${{ env.CAMINHO_PROCESSAMENTO_TCC }}/sessoes/${{ env.SESSAO }}/logs/tcc_unifal_rodada_${{ env.SESSAO }}.log
+          if-no-files-found: ignore
+          retention-days: 30

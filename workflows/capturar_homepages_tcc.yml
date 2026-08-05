@@ -1,0 +1,228 @@
+name: Capturar homepages TCC Unifal
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+on:
+  workflow_dispatch:
+    inputs:
+      rotulo_sessao:
+        description: "Rótulo da sessão"
+        required: true
+        default: "teste_captura_homepages_tcc"
+
+      modo_fila:
+        description: "Como montar a fila"
+        required: true
+        default: "primeiros_n"
+        type: choice
+        options:
+          - primeiros_n
+          - tudo
+
+      codigos_ibge:
+        description: "Códigos IBGE específicos, separados por vírgula. Se preenchido, ignora modo_fila."
+        required: false
+        default: ""
+
+      primeiros_n:
+        description: "Quantidade de municípios para teste quando modo_fila=primeiros_n"
+        required: true
+        default: "5"
+
+      viewport_largura:
+        description: "Largura da captura"
+        required: true
+        default: "1920"
+
+      viewport_altura:
+        description: "Altura da captura"
+        required: true
+        default: "1080"
+
+      timeout_captura_segundos:
+        description: "Timeout por URL em segundos"
+        required: true
+        default: "90"
+
+      espera_apos_carregamento_segundos:
+        description: "Espera após carregamento antes da captura"
+        required: true
+        default: "6"
+
+      full_page:
+        description: "Capturar página inteira?"
+        required: true
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+
+      consolidar_capturas:
+        description: "Copiar capturas OK para a pasta consolidada?"
+        required: true
+        default: "nao"
+        type: choice
+        options:
+          - "nao"
+          - "sim"
+
+      substituir_consolidada:
+        description: "Substituir imagem já existente na pasta consolidada?"
+        required: true
+        default: "nao"
+        type: choice
+        options:
+          - "nao"
+          - "sim"
+
+      max_parallel:
+        description: "Quantidade máxima de capturas em paralelo"
+        required: true
+        default: "3"
+
+jobs:
+  capturar:
+    runs-on: self-hosted
+
+    env:
+      BD_HOST: ${{ secrets.BD_HOST }}
+      BD_PORTA: ${{ secrets.BD_PORTA }}
+      BD_NOME: ${{ secrets.BD_NOME }}
+      BD_USUARIO: ${{ secrets.BD_USUARIO }}
+      BD_SENHA: ${{ secrets.BD_SENHA }}
+
+      BD_TABELA_BASE_TCC: ${{ vars.BD_TABELA_BASE_TCC }}
+      CAMINHO_PROCESSAMENTO_TCC: ${{ vars.CAMINHO_PROCESSAMENTO_TCC }}
+      CAMINHO_EVIDENCIAS_TCC: ${{ vars.CAMINHO_EVIDENCIAS_TCC }}
+
+      MODO_FILA: ${{ inputs.modo_fila }}
+      CODIGOS_IBGE: ${{ inputs.codigos_ibge }}
+      PRIMEIROS_N: ${{ inputs.primeiros_n }}
+      VIEWPORT_LARGURA: ${{ inputs.viewport_largura }}
+      VIEWPORT_ALTURA: ${{ inputs.viewport_altura }}
+      TIMEOUT_CAPTURA_SEGUNDOS: ${{ inputs.timeout_captura_segundos }}
+      ESPERA_APOS_CARREGAMENTO_SEGUNDOS: ${{ inputs.espera_apos_carregamento_segundos }}
+      FULL_PAGE_CAPTURA: ${{ inputs.full_page }}
+      CONSOLIDAR_CAPTURAS: ${{ inputs.consolidar_capturas }}
+      SUBSTITUIR_CONSOLIDADA: ${{ inputs.substituir_consolidada }}
+      MAX_PARALLEL: ${{ inputs.max_parallel }}
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Normalizar caminhos
+        shell: bash
+        run: |
+          set -e
+
+          P="$(printf "%s" "${CAMINHO_PROCESSAMENTO_TCC}" | tr -d '\r\n' | sed 's/^[[:space:]]*//; s/[[:space:]]*$//')"
+          E="$(printf "%s" "${CAMINHO_EVIDENCIAS_TCC}" | tr -d '\r\n' | sed 's/^[[:space:]]*//; s/[[:space:]]*$//')"
+
+          if [[ -n "$P" && "$P" != /* ]]; then P="/$P"; fi
+          if [[ -n "$E" && "$E" != /* ]]; then E="/$E"; fi
+
+          P="${P%/}"
+          E="${E%/}"
+
+          {
+            echo "CAMINHO_PROCESSAMENTO_TCC<<EOF"
+            echo "$P"
+            echo "EOF"
+            echo "CAMINHO_EVIDENCIAS_TCC<<EOF"
+            echo "$E"
+            echo "EOF"
+          } >> "$GITHUB_ENV"
+
+          echo "CAMINHO_PROCESSAMENTO_TCC: $P"
+          echo "CAMINHO_EVIDENCIAS_TCC: $E"
+
+      - name: Acordar disco e garantir diretórios
+        shell: bash
+        run: |
+          set -e
+
+          echo "Tocando volume..."
+          ls -ld "${CAMINHO_PROCESSAMENTO_TCC}" || true
+          ls -ld "${CAMINHO_EVIDENCIAS_TCC}" || true
+
+          mkdir -p "${CAMINHO_PROCESSAMENTO_TCC}/sessoes"
+          mkdir -p "${CAMINHO_PROCESSAMENTO_TCC}/logs_historicos"
+          mkdir -p "${CAMINHO_PROCESSAMENTO_TCC}/temp"
+
+          mkdir -p "${CAMINHO_EVIDENCIAS_TCC}/capturas_homepages/rodadas"
+          mkdir -p "${CAMINHO_EVIDENCIAS_TCC}/capturas_homepages/consolidadas"
+          mkdir -p "${CAMINHO_EVIDENCIAS_TCC}/pdf_anexos"
+          mkdir -p "${CAMINHO_EVIDENCIAS_TCC}/exports"
+          mkdir -p "${CAMINHO_EVIDENCIAS_TCC}/relatorios_ferramentas"
+
+      - name: Definir sessão
+        shell: bash
+        run: |
+          set -e
+
+          TS="$(date +'%Y-%m-%d_%H-%M-%S')"
+          ROT="$(printf "%s" "${{ inputs.rotulo_sessao }}" | tr -d '\r\n' | sed 's/^[[:space:]]*//; s/[[:space:]]*$//')"
+          ROT="$(printf "%s" "$ROT" | tr ' ' '_' | tr -cd '[:alnum:]_.-')"
+
+          if [ -z "$ROT" ]; then
+            ROT="captura_homepages_tcc"
+          fi
+
+          SESSAO="${TS}__${ROT}"
+
+          echo "SESSAO=$SESSAO" >> "$GITHUB_ENV"
+          echo "Sessão definida: $SESSAO"
+
+      - name: Verificar ambiente Python TCC
+        shell: bash
+        run: |
+          set -e
+
+          VENV="${CAMINHO_PROCESSAMENTO_TCC}/venv_tcc"
+          PYTHON_TCC="${VENV}/bin/python"
+
+          if [ ! -d "$VENV" ]; then
+            echo "ERRO: venv_tcc não encontrada em $VENV"
+            echo "Crie a venv_tcc antes de executar este workflow."
+            exit 1
+          fi
+
+          if [ ! -x "$PYTHON_TCC" ]; then
+            echo "ERRO: executável Python não encontrado em $PYTHON_TCC"
+            echo "A venv_tcc existe, mas parece incompleta ou quebrada."
+            exit 1
+          fi
+
+          "$PYTHON_TCC" --version
+          "$PYTHON_TCC" - <<'PY'
+          import pymysql
+          import unidecode
+          import PIL
+          import reportlab
+          from playwright.sync_api import sync_playwright
+          print("Dependências principais OK")
+          PY
+
+      - name: Executar capturas
+        shell: bash
+        run: |
+          set -e
+
+          VENV="${CAMINHO_PROCESSAMENTO_TCC}/venv_tcc"
+          PYTHON_TCC="${VENV}/bin/python"
+
+          "$PYTHON_TCC" scripts/capturar_homepages_tcc.py
+
+      - name: Publicar manifestos e logs como artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: capturas-homepages-tcc-${{ env.SESSAO }}
+          path: |
+            ${{ env.CAMINHO_PROCESSAMENTO_TCC }}/sessoes/${{ env.SESSAO }}/logs
+            ${{ env.CAMINHO_PROCESSAMENTO_TCC }}/sessoes/${{ env.SESSAO }}/manifestos
+            ${{ env.CAMINHO_PROCESSAMENTO_TCC }}/sessoes/${{ env.SESSAO }}/resumo
+            ${{ env.CAMINHO_EVIDENCIAS_TCC }}/capturas_homepages/rodadas/${{ env.SESSAO }}/*.csv
+            ${{ env.CAMINHO_EVIDENCIAS_TCC }}/capturas_homepages/rodadas/${{ env.SESSAO }}/*.json
