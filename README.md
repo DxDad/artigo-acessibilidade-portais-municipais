@@ -8,17 +8,24 @@ O estudo analisa padrões e variações em indicadores automatizados de acessibi
 
 A pesquisa adotou abordagem quantitativa, descritivo-comparativa e observacional, com amostra probabilística estratificada de 362 municípios e quatro rodadas oficiais de avaliação realizadas por meio das ferramentas AMAWeb e AccessMonitor.
 
-O repositório reúne a versão final do artigo, os apêndices, as bases de dados, as planilhas de análise, os scripts, os workflows e os relatórios produzidos no âmbito da pesquisa.
+O repositório reúne os apêndices, as bases de dados, as planilhas de análise, os scripts, os workflows e os relatórios produzidos no âmbito da pesquisa. A versão final do artigo científico será incorporada após sua consolidação.
 
 ## Estrutura do repositório
 
-- `artigo/`: versão final do artigo científico;
 - `apendices/`: apêndices produzidos no âmbito da pesquisa;
 - `dados/`: bases amostrais, dados operacionais e fontes utilizadas;
 - `analises/`: planilhas, indicadores consolidados e resultados estatísticos;
 - `scripts/`: rotinas em Python utilizadas no projeto;
 - `workflows/`: arquivos YAML das automações utilizadas;
 - `relatorios/`: registros estruturados de homologação e conferência das rodadas.
+
+## Citação e DOI
+
+O conjunto documental da pesquisa possui registro permanente no Zenodo.
+
+**DOI conceitual:** [10.5281/zenodo.21799682](https://doi.org/10.5281/zenodo.21799682)
+
+Esse DOI representa todas as versões do repositório e direciona para a versão mais recente publicada.
 
 ## Observações sobre o conteúdo
 
@@ -32,6 +39,10 @@ Alguns arquivos de evidência são disponibilizados de forma consolidada ou redu
 
 Especialização em Gestão Pública Municipal  
 Universidade Federal de Alfenas — UNIFAL-MG
+
+- [ORCID](https://orcid.org/0000-0001-8575-7069)
+- [Currículo Lattes](http://lattes.cnpq.br/0973728129775438)
+- [LinkedIn](https://www.linkedin.com/in/danilo-s-souza)
 
 ## Orientação
 
