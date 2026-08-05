@@ -2,17 +2,30 @@ cff-version: 1.2.0
 message: "Para citar este repositório, utilize os dados abaixo."
 title: "Acessibilidade Digital em Portais de Prefeituras Brasileiras"
 type: dataset
+version: 1.0.0
+date-released: 2026-08-05
+
 authors:
   - family-names: "Souza"
     given-names: "Danilo Silva de"
-repository-code: "https://github.com/SEU-USUARIO/artigo-acessibilidade-portais-municipais"
-url: "https://github.com/SEU-USUARIO/artigo-acessibilidade-portais-municipais"
+    orcid: "https://orcid.org/0000-0001-8575-7069"
+
+repository-code: "https://github.com/DxDad/artigo-acessibilidade-portais-municipais"
+url: "https://doi.org/10.5281/zenodo.21799682"
+
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.21799682"
+    description: "DOI conceitual do repositório, correspondente a todas as versões."
+
 abstract: >-
   Repositório documental da pesquisa Acessibilidade Digital em Portais de
   Prefeituras Brasileiras: conformidade e variação a partir de avaliações
   automatizadas, desenvolvida como trabalho de conclusão do curso de
   Especialização em Gestão Pública Municipal da Universidade Federal de
-  Alfenas.
+  Alfenas. O repositório reúne apêndices, bases de dados, planilhas de análise,
+  scripts, workflows e relatórios produzidos no âmbito da pesquisa.
+
 keywords:
   - acessibilidade digital
   - administração pública municipal
