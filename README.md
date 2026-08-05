@@ -19,7 +19,6 @@ O repositório reúne documentos, dados, rotinas computacionais, relatórios de 
 - `scripts/`: rotinas em Python utilizadas no projeto;
 - `workflows/`: automações executadas por meio do GitHub Actions;
 - `relatorios/`: relatórios de homologação e conferência das coletas;
-- `documentacao/`: registros metodológicos e documentação complementar.
 
 ## Observações sobre o conteúdo
 
