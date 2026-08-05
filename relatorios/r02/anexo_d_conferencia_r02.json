@@ -1,0 +1,184 @@
+{
+  "rodada": "r02",
+  "anexo": "D",
+  "tipo_relatorio": "Conferência",
+  "gerado_em": "2026-07-01 07:59:29",
+  "parecer": "APROVADA",
+  "criterios": [
+    {
+      "id": 1,
+      "nome": "Cobertura da base amostral",
+      "ok": true,
+      "resumo": "362/362 municípios com execução (100,00%).",
+      "dados": {
+        "total_base": 362,
+        "total_exec": 362,
+        "cobertura_pct": 100.0,
+        "faltantes": [],
+        "faltantes_total": 0
+      }
+    },
+    {
+      "id": 2,
+      "nome": "Unicidade dos registros por município e rodada",
+      "ok": true,
+      "resumo": "0 duplicidade(s) encontrada(s).",
+      "dados": {
+        "duplicidades_total": 0,
+        "duplicidades": []
+      }
+    },
+    {
+      "id": 3,
+      "nome": "Vinculação entre execução e base amostral",
+      "ok": true,
+      "resumo": "0 registro(s) de execução sem correspondência na base, em 362 execução(ões).",
+      "dados": {
+        "execucoes_total": 362,
+        "sem_base_total": 0,
+        "sem_base": []
+      }
+    },
+    {
+      "id": 4,
+      "nome": "Preservação da distribuição regional da amostra",
+      "ok": true,
+      "resumo": "Centro-Oeste: 31/31; Nordeste: 116/116; Norte: 30/30; Sudeste: 108/108; Sul: 77/77",
+      "dados": {
+        "comparacao": [
+          {
+            "regiao": "Centro-Oeste",
+            "esperado": 31,
+            "observado": 31,
+            "situacao": "Atendido"
+          },
+          {
+            "regiao": "Nordeste",
+            "esperado": 116,
+            "observado": 116,
+            "situacao": "Atendido"
+          },
+          {
+            "regiao": "Norte",
+            "esperado": 30,
+            "observado": 30,
+            "situacao": "Atendido"
+          },
+          {
+            "regiao": "Sudeste",
+            "esperado": 108,
+            "observado": 108,
+            "situacao": "Atendido"
+          },
+          {
+            "regiao": "Sul",
+            "esperado": 77,
+            "observado": 77,
+            "situacao": "Atendido"
+          }
+        ],
+        "regioes_extras": []
+      }
+    },
+    {
+      "id": 5,
+      "nome": "Registro de status por ferramenta",
+      "ok": true,
+      "resumo": "Sem status AMAWeb: 0; sem status AccessMonitor: 0; total de execuções: 362.",
+      "dados": {
+        "total_execucoes": 362,
+        "sem_status_amaweb": 0,
+        "sem_status_accessmonitor": 0
+      }
+    },
+    {
+      "id": 6,
+      "nome": "Validade das notas registradas",
+      "ok": true,
+      "resumo": "Notas AMAWeb preenchidas: 355; notas AccessMonitor preenchidas: 354; notas fora da faixa 0–10: 0.",
+      "dados": {
+        "notas_amaweb": 355,
+        "notas_accessmonitor": 354,
+        "fora_faixa_total": 0,
+        "fora_faixa": []
+      }
+    },
+    {
+      "id": 7,
+      "nome": "Coerência entre nota e indicador de resultado",
+      "ok": true,
+      "resumo": "0 inconsistência(s) encontrada(s).",
+      "dados": {
+        "inconsistencias_total": 0,
+        "inconsistencias": []
+      }
+    },
+    {
+      "id": 8,
+      "nome": "Rastreabilidade mínima das tentativas",
+      "ok": true,
+      "resumo": "724/724 combinação(ões) município + ferramenta com ao menos um log.",
+      "dados": {
+        "esperado": 724,
+        "com_log": 724,
+        "faltantes_total": 0,
+        "faltantes": []
+      }
+    },
+    {
+      "id": 9,
+      "nome": "Falhas críticas do sistema abaixo do limite admitido",
+      "ok": true,
+      "resumo": "Falhas críticas — AMAWeb: 0 (0,00%); AccessMonitor: 4 (1,10%); Sistema: 0 (0,00%). Limite: < 5,00%.",
+      "dados": {
+        "total_base": 362,
+        "limite": 0.05,
+        "por_ferramenta": {
+          "amaweb": 0,
+          "accessmonitor": 4,
+          "sistema": 0,
+          "outros": 0
+        },
+        "taxas": {
+          "amaweb": 0.0,
+          "accessmonitor": 0.011049723756906077,
+          "sistema": 0.0
+        },
+        "exemplos": [
+          {
+            "codigo_municipio_completo": "2210375",
+            "ferramenta": "accessmonitor",
+            "status_tentativa": "erro",
+            "mensagem_erro": "erro"
+          },
+          {
+            "codigo_municipio_completo": "3544103",
+            "ferramenta": "accessmonitor",
+            "status_tentativa": "erro",
+            "mensagem_erro": "erro"
+          }
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "nome": "Viabilidade dos cálculos previstos na análise",
+      "ok": true,
+      "resumo": "Colunas obrigatórias ausentes — base: 0, execuções: 0, logs: 0. Observações válidas — AMAWeb: 355, AccessMonitor: 354, pares AMAWeb+AccessMonitor: 350.",
+      "dados": {
+        "faltam_base": [],
+        "faltam_execucoes": [],
+        "faltam_logs": [],
+        "total_execucoes": 362,
+        "amaweb_validos": 355,
+        "accessmonitor_validos": 354,
+        "pares_validos": 350
+      }
+    }
+  ],
+  "tabelas": {
+    "base": "tcc_unifal_base_amostral",
+    "execucoes": "tcc_unifal_execucoes",
+    "logs": "tcc_unifal_logs_validacao"
+  }
+}
