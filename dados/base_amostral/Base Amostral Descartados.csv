@@ -1,0 +1,27 @@
+codigo_municipio_completo;codigo_uf;nome_uf;codigo_municipio;nome_municipio;regiao;url;site_encontrado;url_confiavel;status_validacao_url;observacao;populacao_residente_2022;area_territorial_km2;densidade_demografica_hab_km2;chave_aleatoria
+2205409;22;Piauí;05409;Joaquim Pires;Nordeste;https://joaquimpires.pi.gov.br/;Sim;Não;Substituir;Site fora do ar;13886;740,561;18,75;0,009620316
+2202554;22;Piauí;02554;Caridade do Piauí;Nordeste;https://caridadedopiaui.pi.gov.br/;Sim;Não;Substituir;Site fora do ar;5033;498,793;10,09;0,014547672
+2204550;22;Piauí;04550;Guaribas;Nordeste;https://guaribas.pi.gov.br/;Sim;Não;Substituir;Site sem certificado de segurança SSL;4276;3118,231;1,37;0,022935805
+2915908;29;Bahia;15908;Itanagra;Nordeste;https://itanagra.ba.gov.br/;Sim;Não;Substituir;Site não carregou após 3 tentativas;5914;533,634;11,08;0,035096714
+2701803;27;Alagoas;01803;Carneiros;Nordeste;https://carneiros.al.gov.br/;Sim;Não;Substituir;Site sem certificado de segurança SSL;8999;111,696;80,57;0,035656914
+2400505;24;Rio Grande do Norte;00505;Alexandria;Nordeste;https://alexandria.rn.gov.br/;Sim;Não;Substituir;Site não carregou após 3 tentativas;13640;381,205;35,78;0,041069828
+2928604;29;Bahia;28604;Santo Amaro;Nordeste;https://santoamaro.ba.gov.br/;Sim;Não;Substituir;Site não carregou após 3 tentativas;56012;494,502;113,27;0,041610252
+1304401;13;Amazonas;04401;Urucurituba;Norte;https://urucurituba.am.gov.br/prefeitura;Sim;Não;Substituir;Página inicial da prefeitura não caracterizada;23945;2886,494;8,3;0,023704563
+3142809;31;Minas Gerais;42809;Monte Alegre de Minas;Sudeste;https://www.montealegredeminas.mg.gov.br/;Sim;Sim;Substituir;Site indisponivel para acesso com automatização;20170;2595,957;7,77;0,056811995
+3105400;31;Minas Gerais;05400;Barão de Cocais;Sudeste;https://www.baraodecocais.mg.gov.br/;Sim;Sim;Substituir;Bloqueio por captcha para acesso ao site;30778;340,14;90,49;0,070923821
+4206652;42;Santa Catarina;06652;Guatambú;Sul;https://www.guatambu.sc.gov.br/;Sim;Não;Substituir;Site sem certificado de segurança SSL;8425;206,196;40,86;0,00046091
+4108601;41;Paraná;08601;Goioerê;Sul;https://www.goioere.pr.gov.br/;Sim;Sim;Substituir;Bloqueio por captcha para acesso ao site;28437;564,163;50,41;0,001223745
+4313375;43;Rio Grande do Sul;13375;Nova Santa Rita;Sul;https://www.novasantarita.rs.gov.br/;Sim;Não;Substituir;Site sem certificado de segurança SSL;29024;218,153;133,04;0,011395189
+4203105;42;Santa Catarina;03105;Caibi;Sul;https://caibi.atende.net/;Sim;Não;Substituir;Dominio do site fora da estrutura do Gov.br;6304;173,079;36,42;0,013654544
+4208450;42;Santa Catarina;08450;Itapoá;Sul;https://www.itapoa.sc.gov.br/;Sim;Não;Substituir;Site sem certificado de segurança SSL;30750;245,394;125,31;0,016826842
+4306320;43;Rio Grande do Sul;06320;Derrubadas;Sul;https://derrubadas-rs.com.br/site/;Sim;Não;Substituir;Dominio do site fora da estrutura do Gov.br;2751;360,851;7,62;0,022933291
+4208104;42;Santa Catarina;08104;Itaiópolis;Sul;https://www.itaiopolis.sc.gov.br/;Sim;Não;Substituir;Site sem certificado de segurança SSL;22051;1297,543;16,99;0,023020776
+4108551;41;Paraná;08551;Godoy Moreira;Sul;https://www.godoymoreira.pr.gov.br/;Sim;Não;Substituir;Site sem certificado de segurança SSL;2977;131,012;22,72;0,038405968
+4100103;41;Paraná;00103;Abatiá;Sul;https://www.abatia.pr.gov.br/;Sim;Não;Substituir;Site sem certificado de segurança SSL;7241;228,717;31,66;0,041484108
+4203006;42;Santa Catarina;03006;Caçador;Sul;https://www.cacador.sc.gov.br/;Sim;Não;Substituir;Site sem certificado de segurança SSL;73720;983,424;74,96;0,041817942
+4214003;42;Santa Catarina;14003;Presidente Getúlio;Sul;https://www.presidentegetulio.sc.gov.br/;Sim;Não;Substituir;Site sem certificado de segurança SSL;20010;297,16;67,34;0,0480766
+4300034;43;Rio Grande do Sul;00034;Aceguá;Sul;https://acegua.atende.net/;Sim;Não;Substituir;Dominio do site fora da estrutura do Gov.br;4170;1551,339;2,69;0,056859811
+4104055;41;Paraná;04055;Campo Bonito;Sul;https://www.campobonito.pr.gov.br/;Sim;Sim;Substituir;Bloqueio por captcha para acesso ao site;4027;433,832;9,28;0,058201066
+4204509;42;Santa Catarina;04509;Corupá;Sul;https://corupa.atende.net/cidadao;Sim;Não;Substituir;Dominio do site fora da estrutura do Gov.br;15267;405,761;37,63;0,059894599
+4301107;43;Rio Grande do Sul;01107;Arroio dos Ratos;Sul;https://www.arroiodosratos.rs.gov.br/;Sim;Sim;Substituir;Bloqueio por captcha para acesso ao site;14601;425,791;34,29;0,060988343
+4125555;41;Paraná;25555;São Manoel do Paraná;Sul;https://www.saomanoeldoparana.pr.gov.br/site/;Sim;Sim;Substituir;Bloqueio por captcha para acesso ao site;2138;95,381;22,42;0,068868324

@@ -1,0 +1,363 @@
+"codigo_municipio_completo","codigo_uf","nome_uf","codigo_municipio","nome_municipio","regiao","url","site_encontrado","url_confiavel","status_validacao_url","populacao_residente_2022","area_territorial_km2","densidade_demografica_hab_km2","chave_aleatoria","observacao"
+"5107909","51",Mato Grosso,"07909",Sinop,Centro-Oeste,https://www.sinop.mt.gov.br/,Sim,Sim,Apto,"196312","3990,87","49,19","0,002508886",0
+"5108402","51",Mato Grosso,"08402",Várzea Grande,Centro-Oeste,https://www.varzeagrande.mt.gov.br/,Sim,Sim,Apto,"300078","724,279","414,31","0,004229534",0
+"5206602","52",Goiás,"06602",Cumari,Centro-Oeste,https://cumari.go.gov.br/,Sim,Sim,Apto,"2927","568,365","5,15","0,005838812",0
+"5220454","52",Goiás,"20454",Senador Canedo,Centro-Oeste,https://senadorcanedo.go.gov.br/,Sim,Sim,Apto,"155635","247,005","630,09","0,006292154",0
+"5207253","52",Goiás,"07253",Doverlândia,Centro-Oeste,https://doverlandia.go.gov.br/,Sim,Sim,Apto,"6956","3227,558","2,16","0,006417589",0
+"5103437","51",Mato Grosso,"03437",Curvelândia,Centro-Oeste,https://www.curvelandia.mt.gov.br/,Sim,Sim,Apto,"4903","357,128","13,73","0,006579241",0
+"5204656","52",Goiás,"04656",Campinaçu,Centro-Oeste,https://www.campinacu.go.gov.br/,Sim,Sim,Apto,"3708","1978,386","1,87","0,008315084",0
+"5213905","52",Goiás,"13905",Mossâmedes,Centro-Oeste,http://mossamedes.go.gov.br/,Sim,Sim,Apto,"4654","684,882","6,8","0,010133321",0
+"5002704","50",Mato Grosso do Sul,"02704",Campo Grande,Centro-Oeste,https://www.campogrande.ms.gov.br/,Sim,Sim,Apto,"898100","8082,978","111,11","0,011278",0
+"5210802","52",Goiás,"10802",Itajá,Centro-Oeste,https://itaja.go.gov.br/,Sim,Sim,Apto,"4380","2082,736","2,1","0,012106377",0
+"5007208","50",Mato Grosso do Sul,"07208",Rio Brilhante,Centro-Oeste,https://riobrilhante.ms.gov.br/,Sim,Sim,Apto,"37601","3983,562","9,44","0,015918488",0
+"5214838","52",Goiás,"14838",Nova Crixás,Centro-Oeste,https://novacrixas.go.gov.br/,Sim,Sim,Apto,"12815","7308,681","1,75","0,016464116",0
+"5213806","52",Goiás,"13806",Morrinhos,Centro-Oeste,https://morrinhos.go.gov.br/,Sim,Sim,Apto,"51351","2846,299","18,04","0,018167335",0
+"5002902","50",Mato Grosso do Sul,"02902",Cassilândia,Centro-Oeste,https://cassilandia.ms.gov.br/,Sim,Sim,Apto,"20988","3658,252","5,74","0,01937162",0
+"5001904","50",Mato Grosso do Sul,"01904",Bataguassu,Centro-Oeste,https://www.bataguassu.ms.gov.br/,Sim,Sim,Apto,"23031","2392,476","9,63","0,022671103",0
+"5104807","51",Mato Grosso,"04807",Jaciara,Centro-Oeste,https://www.jaciara.mt.gov.br/,Sim,Sim,Apto,"28569","2429,678","11,76","0,024239065",0
+"5205802","52",Goiás,"05802",Corumbá de Goiás,Centro-Oeste,https://corumbadegoias.go.gov.br/,Sim,Sim,Apto,"10562","1064,833","9,92","0,025575785",0
+"5100102","51",Mato Grosso,"00102",Acorizal,Centro-Oeste,https://www.acorizal.mt.gov.br/,Sim,Sim,Apto,"5014","850,763","5,89","0,032308056",0
+"5203939","52",Goiás,"03939",Buriti de Goiás,Centro-Oeste,https://buritidegoias.go.gov.br/,Sim,Sim,Apto,"2732","202,576","13,49","0,04300252",0
+"5211800","52",Goiás,"11800",Jaraguá,Centro-Oeste,https://jaragua.go.gov.br/,Sim,Sim,Apto,"45223","1848,947","24,46","0,047034214",0
+"5208806","52",Goiás,"08806",Goianira,Centro-Oeste,https://goianira.go.gov.br/,Sim,Sim,Apto,"71916","213,772","336,41","0,049244369",0
+"5216908","52",Goiás,"16908",Pilar de Goiás,Centro-Oeste,https://pilar.go.gov.br/,Sim,Sim,Apto,"2328","906,048","2,57","0,050478264",0
+"5003157","50",Mato Grosso do Sul,"03157",Coronel Sapucaia,Centro-Oeste,https://www.coronelsapucaia.ms.gov.br/,Sim,Sim,Apto,"14289","1023,727","13,96","0,051821147",0
+"5105580","51",Mato Grosso,"05580",Marcelândia,Centro-Oeste,https://www.marcelandia.mt.gov.br/,Sim,Sim,Apto,"11396","12285,486","0,93","0,053155691",0
+"5106828","51",Mato Grosso,"06828",Porto Esperidião,Centro-Oeste,https://www.portoesperidiao.mt.gov.br/,Sim,Sim,Apto,"10204","5835,278","1,75","0,055554401",0
+"5101902","51",Mato Grosso,"01902",Brasnorte,Centro-Oeste,https://www.brasnorte.mt.gov.br/,Sim,Sim,Apto,"17004","15968,355","1,06","0,057516337",0
+"5209457","52",Goiás,"09457",Guarinos,Centro-Oeste,https://guarinos.go.gov.br/,Sim,Sim,Apto,"2161","593,188","3,64","0,060272928",0
+"5102504","51",Mato Grosso,"02504",Cáceres,Centro-Oeste,https://www.caceres.mt.gov.br/,Sim,Sim,Apto,"89681","24495,51","3,66","0,061070172",0
+"5214861","52",Goiás,"14861",Nova Glória,Centro-Oeste,https://novagloria.go.gov.br/,Sim,Sim,Apto,"8310","411,753","20,18","0,062933634",0
+"5107107","51",Mato Grosso,"07107",São José dos Quatro Marcos,Centro-Oeste,https://saojosedosquatromarcos.mt.gov.br/,Sim,Sim,Apto,"17849","1282,763","13,91","0,064629904",0
+"5004106","50",Mato Grosso do Sul,"04106",Guia Lopes da Laguna,Centro-Oeste,https://www.guialopesdalaguna.ms.gov.br/site/,Sim,Sim,Apto,"9940","1225,426","8,11","0,067961194",0
+"2203305","22",Piauí,"03305",Demerval Lobão,Nordeste,https://demervallobao.pi.gov.br/,Sim,Sim,Apto,"16352","216,807","75,42","0,000308856",0
+"2504405","25",Paraíba,"04405",Conceição,Nordeste,https://conceicao.pb.gov.br/,Sim,Sim,Apto,"18260","580,65","31,45","0,00075747",0
+"2703304","27",Alagoas,"03304",Inhapi,Nordeste,https://inhapi.al.gov.br/,Sim,Sim,Apto,"15167","372,019","40,77","0,000900064",0
+"2900603","29",Bahia,"00603",Aiquara,Nordeste,https://www.aiquara.ba.gov.br/,Sim,Sim,Apto,"4447","167,877","26,49","0,00135199",0
+"2933000","29",Bahia,"33000",Valente,Nordeste,https://valente.ba.gov.br/portal/,Sim,Sim,Apto,"24362","394,877","61,7","0,001840765",0
+"2413904","24",Rio Grande do Norte,"13904",Taipu,Nordeste,https://www.taipu.rn.gov.br/,Sim,Sim,Apto,"11422","352,818","32,37","0,002139985",0
+"2913705","29",Bahia,"13705",Inhambupe,Nordeste,https://inhambupe.ba.gov.br/,Sim,Sim,Apto,"33790","1082,283","31,22","0,003035748",0
+"2922607","29",Bahia,"22607",Nilo Peçanha,Nordeste,https://nilopecanha.ba.gov.br/,Sim,Sim,Apto,"12063","388,936","31,02","0,004285414",0
+"2933208","29",Bahia,"33208",Vera Cruz,Nordeste,https://veracruz.ba.gov.br/,Sim,Sim,Apto,"42529","297,537","142,94","0,005233927",0
+"2513158","25",Paraíba,"13158",Santa Cecília,Nordeste,https://santacecilia.pb.gov.br/,Sim,Sim,Apto,"7670","217,577","35,25","0,005359746",0
+"2614006","26",Pernambuco,"14006",Serrita,Nordeste,https://serrita.pe.gov.br/,Sim,Sim,Apto,"18207","1535,19","11,86","0,005595366",0
+"2110906","21",Maranhão,"10906",São Francisco do Maranhão,Nordeste,https://saofranciscodomaranhao.ma.gov.br/,Sim,Sim,Apto,"12064","2284,217","5,28","0,006270052",0
+"2407500","24",Rio Grande do Norte,"07500",Maxaranguape,Nordeste,https://www.maxaranguape.rn.gov.br/,Sim,Sim,Apto,"10255","132,129","77,61","0,006953699",0
+"2209971","22",Piauí,"09971",São João do Arraial,Nordeste,https://saojoaodoarraial.pi.gov.br/,Sim,Sim,Apto,"8186","213,377","38,36","0,009688016",0
+"2103174","21",Maranhão,"03174",Centro Novo do Maranhão,Nordeste,https://www.centronovo.ma.gov.br/,Sim,Sim,Apto,"16267","8401,003","1,94","0,00979613",0
+"2313955","23",Ceará,"13955",Varjota,Nordeste,https://varjota.ce.gov.br/,Sim,Sim,Apto,"18105","179,239","101,01","0,010117978",0
+"2609006","26",Pernambuco,"09006",Macaparana,Nordeste,https://macaparana.pe.gov.br/,Sim,Sim,Apto,"23879","108,049","221","0,011020208",0
+"2510659","25",Paraíba,"10659",Parari,Nordeste,https://parari.pb.gov.br/,Sim,Sim,Apto,"1720","207,814","8,28","0,011139348",0
+"2303006","23",Ceará,"03006",Caridade,Nordeste,https://caridade.ce.gov.br/,Sim,Sim,Apto,"16377","926,271","17,68","0,011296273",0
+"2512705","25",Paraíba,"12705",Remígio,Nordeste,https://remigio.pb.gov.br/,Sim,Sim,Apto,"17885","183,459","97,49","0,012017221",0
+"2929107","29",Bahia,"29107",São Felipe,Nordeste,https://saofelipe.ba.gov.br/,Sim,Sim,Apto,"20283","222,407","91,2","0,01217146",0
+"2404408","24",Rio Grande do Norte,"04408",Grossos,Nordeste,https://www.grossos.rn.gov.br/,Sim,Sim,Apto,"9924","124,538","79,69","0,013497747",0
+"2411007","24",Rio Grande do Norte,"11007",Rodolfo Fernandes,Nordeste,https://www.rodolfofernandes.rn.gov.br/,Sim,Sim,Apto,"4242","154,84","27,4","0,014288733",0
+"2204352","22",Piauí,"04352",Geminiano,Nordeste,https://geminiano.pi.gov.br/,Sim,Sim,Apto,"5445","440,606","12,36","0,014697646",0
+"2918803","29",Bahia,"18803",Laje,Nordeste,https://laje.ba.gov.br/,Sim,Sim,Apto,"21052","449,834","46,8","0,014827922",0
+"2918555","29",Bahia,"18555",Jussari,Nordeste,https://jussari.ba.gov.br/,Sim,Sim,Apto,"5888","329,19","17,89","0,015081429",0
+"2923704","29",Bahia,"23704",Paratinga,Nordeste,https://www.paratinga.ba.gov.br/,Sim,Sim,Apto,"29252","2624,998","11,14","0,015104391",0
+"2923209","29",Bahia,"23209",Oliveira dos Brejinhos,Nordeste,https://oliveiradosbrejinhos.ba.gov.br/,Sim,Sim,Apto,"20715","3313,418","6,25","0,015397334",0
+"2919058","29",Bahia,"19058",Lajedo do Tabocal,Nordeste,https://www.lagedodotabocal.ba.gov.br/,Sim,Sim,Apto,"7494","382,937","19,57","0,016766914",0
+"2407104","24",Rio Grande do Norte,"07104",Macaíba,Nordeste,https://macaiba.rn.gov.br/,Sim,Sim,Apto,"82249","510,092","161,24","0,017288691",0
+"2210375","22",Piauí,"10375",São Luis do Piauí,Nordeste,https://saoluisdopiaui.pi.gov.br/,Sim,Sim,Apto,"2309","217,924","10,6","0,018306375",0
+"2202901","22",Piauí,"02901",Corrente,Nordeste,https://corrente.pi.gov.br/,Sim,Sim,Apto,"27278","3048,747","8,95","0,018826734",0
+"2205359","22",Piauí,"05359",João Costa,Nordeste,https://joaocosta.pi.gov.br/,Sim,Sim,Apto,"2970","1800,23","1,65","0,019374717",0
+"2308708","23",Ceará,"08708",Morada Nova,Nordeste,https://moradanova.ce.gov.br/,Sim,Sim,Apto,"61443","2763,971","22,23","0,019434521",0
+"2702900","27",Alagoas,"02900",Girau do Ponciano,Nordeste,https://giraudoponciano.al.gov.br/,Sim,Sim,Apto,"36102","513,454","70,31","0,020582969",0
+"2401453","24",Rio Grande do Norte,"01453",Baraúna,Nordeste,https://www.barauna.rn.gov.br/,Sim,Sim,Apto,"26913","825,681","32,59","0,021209563",0
+"2706422","27",Alagoas,"06422",Pariconha,Nordeste,https://pariconha.al.gov.br/,Sim,Sim,Apto,"10573","254,719","41,51","0,022546673",0
+"2414902","24",Rio Grande do Norte,"14902",Viçosa,Nordeste,https://www.vicosa.rn.gov.br/,Sim,Sim,Apto,"1822","37,905","48,07","0,023534819",0
+"2405108","24",Rio Grande do Norte,"05108",Jandaíra,Nordeste,https://www.jandaira.rn.gov.br/,Sim,Sim,Apto,"6562","442,754","14,82","0,024428831",0
+"2205250","22",Piauí,"05250",Jardim do Mulato,Nordeste,https://jardimdomulato.pi.gov.br/,Sim,Sim,Apto,"4180","510,226","8,19","0,024545645",0
+"2911402","29",Bahia,"11402",Glória,Nordeste,https://gloria.ba.gov.br/,Sim,Sim,Apto,"15524","1566,609","9,91","0,025757137",0
+"2915007","29",Bahia,"15007",Itaeté,Nordeste,https://itaete.ba.gov.br/,Sim,Sim,Apto,"13472","1331,822","10,12","0,026700062",0
+"2103406","21",Maranhão,"03406",Coelho Neto,Nordeste,https://coelhoneto.ma.gov.br/,Sim,Sim,Apto,"41658","977,079","42,64","0,027671749",0
+"2806008","28",Sergipe,"06008",Ribeirópolis,Nordeste,https://ribeiropolis.se.gov.br/,Sim,Sim,Apto,"17033","259,044","65,75","0,027690652",0
+"2600203","26",Pernambuco,"00203",Afrânio,Nordeste,https://afranio.pe.gov.br/,Sim,Sim,Apto,"18674","1490,594","12,53","0,027738942",0
+"2100501","21",Maranhão,"00501",Alto Parnaíba,Nordeste,https://altoparnaiba.ma.gov.br/,Sim,Sim,Apto,"11109","11127,384","1","0,028040739",0
+"2102408","21",Maranhão,"02408",Cajapió,Nordeste,https://cajapio.ma.gov.br/,Sim,Sim,Apto,"10121","545,244","18,56","0,028350334",0
+"2507408","25",Paraíba,"07408",Jericó,Nordeste,https://jerico.pb.gov.br/,Sim,Sim,Apto,"7516","177,356","42,38","0,028759395",0
+"2210904","22",Piauí,"10904",Socorro do Piauí,Nordeste,https://socorrodopiaui.pi.gov.br/,Sim,Sim,Apto,"4141","761,854","5,44","0,030018572",0
+"2702207","27",Alagoas,"02207",Coqueiro Seco,Nordeste,https://coqueiroseco.al.gov.br/,Sim,Sim,Apto,"5581","39,608","140,91","0,031164857",0
+"2513901","25",Paraíba,"13901",São Bento,Nordeste,https://saobento.pb.gov.br/,Sim,Sim,Apto,"32235","245,84","131,12","0,031765704",0
+"2926806","29",Bahia,"26806",Rio do Antônio,Nordeste,https://riodoantonio.ba.gov.br/,Sim,Sim,Apto,"13146","777,903","16,9","0,032125936",0
+"2700102","27",Alagoas,"00102",Água Branca,Nordeste,https://aguabranca.al.gov.br/,Sim,Sim,Apto,"19008","468,229","40,6","0,033735857",0
+"2310308","23",Ceará,"10308",Parambu,Nordeste,https://parambu.ce.gov.br/,Sim,Sim,Apto,"31445","2313,868","13,59","0,035801009",0
+"2903201","29",Bahia,"03201",Barreiras,Nordeste,https://barreiras.ba.gov.br/,Sim,Sim,Apto,"159734","8051,274","19,84","0,036749871",0
+"2923803","29",Bahia,"23803",Paripiranga,Nordeste,https://paripiranga.ba.gov.br/,Sim,Sim,Apto,"26604","442,186","60,16","0,037204437",0
+"2805703","28",Sergipe,"05703",Propriá,Nordeste,https://propria.se.gov.br/,Sim,Sim,Apto,"26618","96,32","276,35","0,038627117",0
+"2101608","21",Maranhão,"01608",Barra do Corda,Nordeste,https://barradocorda.ma.gov.br/,Sim,Sim,Apto,"84532","5187,673","16,29","0,038885283",0
+"2912103","29",Bahia,"12103",Ibicaraí,Nordeste,https://ibicarai.ba.gov.br/,Sim,Sim,Apto,"21665","230,953","93,81","0,038914461",0
+"2921302","29",Bahia,"21302",Milagres,Nordeste,https://milagres.ba.gov.br/,Sim,Sim,Apto,"11071","420,358","26,34","0,039502178",0
+"2210656","22",Piauí,"10656",Sigefredo Pacheco,Nordeste,https://sigefredopacheco.pi.gov.br/,Sim,Sim,Apto,"9460","1031,101","9,17","0,040032682",0
+"2211704","22",Piauí,"11704",Wall Ferraz,Nordeste,https://wallferraz.pi.gov.br/,Sim,Sim,Apto,"4059","270,427","15,01","0,040128058",0
+"2708808","27",Alagoas,"08808",São Sebastião,Nordeste,https://saosebastiao.al.gov.br/,Sim,Sim,Apto,"31786","314,924","100,93","0,04059063",0
+"2514701","25",Paraíba,"14701",São José do Sabugi,Nordeste,https://saojosedosabugi.pb.gov.br/,Sim,Sim,Apto,"4138","213,555","19,38","0,040751127",0
+"2514602","25",Paraíba,"14602",São José do Bonfim,Nordeste,https://saojosedobonfim.pb.gov.br/,Sim,Sim,Apto,"3242","153,629","21,1","0,041229137",0
+"2926202","29",Bahia,"26202",Riachão das Neves,Nordeste,https://riachaodasneves.ba.gov.br/,Sim,Sim,Apto,"21642","5977,931","3,62","0,041666579",0
+"2207850","22",Piauí,"07850",Pavussu,Nordeste,https://pavussu.pi.gov.br/,Sim,Sim,Apto,"3628","1090,697","3,33","0,04263825",0
+"2301851","23",Ceará,"01851",Banabuiú,Nordeste,https://banabuiu.ce.gov.br/,Sim,Sim,Apto,"17195","1080,986","15,91","0,042876358",0
+"2902500","29",Bahia,"02500",Baianópolis,Nordeste,https://baianopolis.ba.gov.br/,Sim,Sim,Apto,"13614","3320,723","4,1","0,043630422",0
+"2901106","29",Bahia,"01106",Amélia Rodrigues,Nordeste,https://ameliarodrigues.ba.gov.br/,Sim,Sim,Apto,"24138","166,872","144,65","0,044056054",0
+"2911303","29",Bahia,"11303",Gentio do Ouro,Nordeste,https://gentiodoouro.ba.gov.br/,Sim,Sim,Apto,"10884","3817,946","2,85","0,044323056",0
+"2100956","21",Maranhão,"00956",Arame,Nordeste,https://arame.ma.gov.br/,Sim,Sim,Apto,"25517","2976,039","8,57","0,044696622",0
+"2201507","22",Piauí,"01507",Batalha,Nordeste,https://batalha.pi.gov.br/,Sim,Sim,Apto,"26300","1589,01","16,55","0,046040745",0
+"2100436","21",Maranhão,"00436",Alto Alegre do Maranhão,Nordeste,https://altoalegredomaranhao.ma.gov.br/,Sim,Sim,Apto,"24048","392,75","61,23","0,046915295",0
+"2109908","21",Maranhão,"09908",Santa Inês,Nordeste,https://santaines.ma.gov.br/,Sim,Sim,Apto,"85014","786,689","108,07","0,047817883",0
+"2604403","26",Pernambuco,"04403",Chã de Alegria,Nordeste,https://chadealegria.pe.gov.br/,Sim,Sim,Apto,"12984","49,327","263,22","0,048641586",0
+"2303956","23",Ceará,"03956",Chorozinho,Nordeste,https://chorozinho.ce.gov.br/,Sim,Sim,Apto,"20163","296,431","68,02","0,04919574",0
+"2407252","24",Rio Grande do Norte,"07252",Major Sales,Nordeste,https://www.majorsales.rn.gov.br/,Sim,Sim,Apto,"3924","31,971","122,74","0,049707881",0
+"2506251","25",Paraíba,"06251",Gado Bravo,Nordeste,https://gadobravo.pb.gov.br/,Sim,Sim,Apto,"8179","192,42","42,51","0,050573647",0
+"2210607","22",Piauí,"10607",São Raimundo Nonato,Nordeste,https://saoraimundononato.pi.gov.br/,Sim,Sim,Apto,"38934","2415,287","16,12","0,050747626",0
+"2607604","26",Pernambuco,"07604",Ilha de Itamaracá,Nordeste,https://ilhadeitamaraca.pe.gov.br/,Sim,Sim,Apto,"24540","66,146","371","0,050966774",0
+"2513927","25",Paraíba,"13927",São Bentinho,Nordeste,https://saobentinho.pb.gov.br/,Sim,Sim,Apto,"4327","199,635","21,67","0,051430684",0
+"2303402","23",Ceará,"03402",Carnaubal,Nordeste,https://carnaubal.ce.gov.br/,Sim,Sim,Apto,"17210","363,22","47,38","0,053004556",0
+"2613701","26",Pernambuco,"13701",São Lourenço da Mata,Nordeste,https://saolourencodamata.pe.gov.br/,Sim,Sim,Apto,"111249","263,687","421,9","0,053047332",0
+"2407401","24",Rio Grande do Norte,"07401",Martins,Nordeste,https://www.martins.rn.gov.br/,Sim,Sim,Apto,"8179","169,464","48,26","0,053089758",0
+"2107605","21",Maranhão,"07605",Palmeirândia,Nordeste,https://palmeirandia.ma.gov.br/,Sim,Sim,Apto,"21059","532,161","39,57","0,053575269",0
+"2106631","21",Maranhão,"06631",Matões do Norte,Nordeste,https://matoesdonorte.ma.gov.br/,Sim,Sim,Apto,"17432","794,454","21,94","0,057130441",0
+"2508406","25",Paraíba,"08406",Lastro,Nordeste,https://lastro.pb.gov.br/,Sim,Sim,Apto,"3162","107,416","29,44","0,057811582",0
+"2601201","26",Pernambuco,"01201",Arcoverde,Nordeste,https://arcoverde.pe.gov.br/,Sim,Sim,Apto,"77742","343,923","226,04","0,058137144",0
+"2108801","21",Maranhão,"08801",Pirapemas,Nordeste,https://pirapemas.ma.gov.br/,Sim,Sim,Apto,"17714","688,761","25,72","0,05912104",0
+"2918357","29",Bahia,"18357",João Dourado,Nordeste,https://joaodourado.ba.gov.br/,Sim,Sim,Apto,"24854","913,258","27,21","0,059309508",0
+"2303303","23",Ceará,"03303",Cariús,Nordeste,https://carius.ce.gov.br/,Sim,Sim,Apto,"17015","1036,417","16,42","0,060307147",0
+"2805802","28",Sergipe,"05802",Riachão do Dantas,Nordeste,https://riachaododantas.se.gov.br/,Sim,Sim,Apto,"18313","530,607","34,51","0,061015964",0
+"2607000","26",Pernambuco,"07000",Inajá,Nordeste,https://inaja.pe.gov.br/,Sim,Sim,Apto,"25603","1231,362","20,79","0,062401951",0
+"2101970","21",Maranhão,"01970",Boa Vista do Gurupi,Nordeste,https://boavistadogurupi.ma.gov.br/,Sim,Sim,Apto,"7574","400,35","18,92","0,062444011",0
+"2312106","23",Ceará,"12106",Santana do Cariri,Nordeste,https://santanadocariri.ce.gov.br/,Sim,Sim,Apto,"16954","855,165","19,83","0,062479743",0
+"2313252","23",Ceará,"13252",Tarrafas,Nordeste,https://tarrafas.ce.gov.br/,Sim,Sim,Apto,"7529","412,719","18,24","0,063475886",0
+"2915106","29",Bahia,"15106",Itagi,Nordeste,https://itagi.ba.gov.br/,Sim,Sim,Apto,"13803","310,621","44,44","0,063713698",0
+"2514453","25",Paraíba,"14453",São José dos Ramos,Nordeste,https://saojosedosramos.pb.gov.br/,Sim,Sim,Apto,"5891","100,642","58,53","0,064585079",0
+"2303105","23",Ceará,"03105",Cariré,Nordeste,https://carire.ce.gov.br/,Sim,Sim,Apto,"17632","755,597","23,34","0,064615142",0
+"2928406","29",Bahia,"28406",Santa Rita de Cássia,Nordeste,https://santaritadecassia.ba.gov.br/,Sim,Sim,Apto,"27390","6030,491","4,54","0,065292655",0
+"2611705","26",Pernambuco,"11705",Riacho das Almas,Nordeste,https://riachodasalmas.pe.gov.br/,Sim,Sim,Apto,"20639","314,003","65,73","0,066992073",0
+"2310407","23",Ceará,"10407",Paramoti,Nordeste,https://paramoti.ce.gov.br/,Sim,Sim,Apto,"10384","539,238","19,26","0,067974681",0
+"2406809","24",Rio Grande do Norte,"06809",Lajes Pintadas,Nordeste,https://www.lajespintadas.rn.gov.br/,Sim,Sim,Apto,"4787","130,211","36,76","0,068000571",0
+"2111805","21",Maranhão,"11805",Sítio Novo,Nordeste,https://sitionovo.ma.gov.br/,Sim,Sim,Apto,"17074","3114,683","5,48","0,068976051",0
+"2924603","29",Bahia,"24603",Pindobaçu,Nordeste,https://pindobacu.ba.gov.br/,Sim,Sim,Apto,"19083","495,845","38,49","0,069134764",0
+"2410306","24",Rio Grande do Norte,"10306",Serra Caiada,Nordeste,https://www.serracaiada.rn.gov.br/,Sim,Sim,Apto,"10125","217,539","46,54","0,069252814",0
+"2607307","26",Pernambuco,"07307",Ipubi,Nordeste,https://ipubi.pe.gov.br/,Sim,Sim,Apto,"29009","693,914","41,8","0,069879491",0
+"2304236","23",Ceará,"04236",Croatá,Nordeste,https://croata.ce.gov.br/,Sim,Sim,Apto,"17481","696,348","25,1","0,071170911",0
+"2206407","22",Piauí,"06407",Monsenhor Gil,Nordeste,https://monsenhorgil.pi.gov.br/,Sim,Sim,Apto,Não encontrado,Não encontrado,Não encontrado,"0,071459944",0
+"2105203","21",Maranhão,"05203",Igarapé Grande,Nordeste,https://www.igarapegrande.ma.gov.br/,Sim,Sim,Apto,Não encontrado,Não encontrado,Não encontrado,"0,071777594",0
+"2105104","21",Maranhão,"05104",Icatu,Nordeste,https://www.icatu.ma.gov.br/,Sim,Sim,Apto,Não encontrado,Não encontrado,Não encontrado,"0,072415158",0
+"2504074","25",Paraíba,"04074",Caraúbas,Nordeste,https://caraubas.rn.gov.br/,Sim,Sim,Apto,Não encontrado,Não encontrado,Não encontrado,"0,072676517",0
+"2109809","21",Maranhão,"09809",Santa Helena,Nordeste,https://santahelena.ma.gov.br/,Sim,Sim,Apto,Não encontrado,Não encontrado,Não encontrado,"0,073116644",0
+"2614501","26",Pernambuco,"14501",Surubim,Nordeste,https://surubim.pe.gov.br/,Sim,Sim,Apto,"64120","252,896","253,54","0,073506142",0
+"2927002","29",Bahia,"27002",Rio Real,Nordeste,https://rioreal.ba.gov.br/,Sim,Sim,Apto,"35362","739,775","47,8","0,074273743",0
+"1502707","15",Pará,"02707",Conceição do Araguaia,Norte,https://www.conceicaodoaraguaia.pa.gov.br/,Sim,Sim,Apto,"44617","5829,482","7,65","0,002090179",0
+"1303403","13",Amazonas,"03403",Parintins,Norte,https://www.parintins.am.gov.br/,Sim,Sim,Apto,"96372","5956,047","16,18","0,003152961",0
+"1101807","11",Rondônia,"01807",Vale do Paraíso,Norte,https://www.valedoparaiso.ro.gov.br/,Sim,Sim,Apto,"6479","965,676","6,71","0,003862403",0
+"1600550","16",Amapá,"00550",Pracuúba,Norte,https://www.pracuuba.ap.gov.br/,Sim,Sim,Apto,"3803","4948,508","0,77","0,005229401",0
+"1718808","17",Tocantins,"18808",Sampaio,Norte,https://www.sampaio.to.gov.br/,Sim,Sim,Apto,"4215","222,435","18,95","0,014196673",0
+"1702208","17",Tocantins,"02208",Araguatins,Norte,https://www.araguatins.to.gov.br/,Sim,Sim,Apto,"31918","2633,278","12,12","0,014233899",0
+"1600709","16",Amapá,"00709",Tartarugalzinho,Norte,https://www.tartarugalzinho.ap.gov.br/,Sim,Sim,Apto,"12945","6684,705","1,94","0,014378356",0
+"1200393","12",Acre,"00393",Porto Walter,Norte,https://www.portowalter.ac.gov.br/,Sim,Sim,Apto,"10735","6446,385","1,67","0,015577227",0
+"1300839","13",Amazonas,"00839",Caapiranga,Norte,https://www.caapiranga.am.gov.br/,Sim,Sim,Apto,"13469","9455,539","1,42","0,016174427",0
+"1100015","11",Rondônia,"00015",Alta Floresta D'Oeste,Norte,https://www.altaflorestadoeste.ro.gov.br/,Sim,Sim,Apto,"21494","7067,127","3,04","0,016815501",0
+"1100700","11",Rondônia,"00700",Campo Novo de Rondônia,Norte,https://camponovo.ro.gov.br/,Sim,Sim,Apto,"8844","3442,005","2,57","0,019504094",0
+"1502939","15",Pará,"02939",Dom Eliseu,Norte,https://www.domeliseu.pa.gov.br/,Sim,Sim,Apto,"58484","5268,809","11,1","0,024044185",0
+"1100908","11",Rondônia,"00908",Castanheiras,Norte,https://www.castanheiras.ro.gov.br/,Sim,Sim,Apto,"3233","892,841","3,62","0,024067973",0
+"1600303","16",Amapá,"00303",Macapá,Norte,https://www.macapa.ap.gov.br/,Sim,Sim,Apto,"442933","6563,849","67,48","0,024986543",0
+"1710706","17",Tocantins,"10706",Itaguatins,Norte,https://www.itaguatins.to.gov.br/,Sim,Sim,Apto,"5172","730,163","7,08","0,027258705",0
+"1706258","17",Tocantins,"06258",Crixás do Tocantins,Norte,https://crixas.to.gov.br/,Sim,Sim,Apto,"1470","983,766","1,49","0,028022831",0
+"1709302","17",Tocantins,"09302",Guaraí,Norte,https://guarai.to.gov.br/transparencia/,Sim,Sim,Apto,"24775","2106,753","11,76","0,028186266",0
+"1400472","14",Roraima,"00472",Rorainópolis,Norte,https://www.rorainopolis.rr.gov.br/,Sim,Sim,Apto,"32647","33579,739","0,97","0,028879589",0
+"1301209","13",Amazonas,"01209",Coari,Norte,https://prefeitura.coari.am.gov.br/,Sim,Sim,Apto,"70616","57970,768","1,22","0,030697806",0
+"1703826","17",Tocantins,"03826",Cachoeirinha,Norte,https://www.cachoeirinha.to.gov.br/,Sim,Sim,Apto,"1961","351,535","5,58","0,035651048",0
+"1200179","12",Acre,"00179",Capixaba,Norte,https://www.capixaba.ac.gov.br/,Sim,Sim,Apto,"10392","1705,824","6,09","0,037388365",0
+"1505494","15",Pará,"05494",Palestina do Pará,Norte,https://www.palestinadopara.pa.gov.br/,Sim,Sim,Apto,"6885","984,362","6,99","0,054995703",0
+"1504422","15",Pará,"04422",Marituba,Norte,https://www.marituba.pa.gov.br/,Sim,Sim,Apto,"111785","103,214","1083,04","0,056731935",0
+"1300706","13",Amazonas,"00706",Boca do Acre,Norte,https://www.bocadoacre.am.gov.br/,Sim,Sim,Apto,"35447","21938,583","1,62","0,057157123",0
+"1722107","17",Tocantins,"22107",Xambioá,Norte,https://www.xambioa.to.gov.br/,Sim,Sim,Apto,"10517","1190,489","8,83","0,061144273",0
+"1300508","13",Amazonas,"00508",Barreirinha,Norte,https://www.barreirinha.am.gov.br/,Sim,Sim,Apto,"31051","5751,765","5,4","0,064362995",0
+"1500958","15",Pará,"00958",Aurora do Pará,Norte,https://www.auroradopara.pa.gov.br/,Sim,Sim,Apto,"23774","1811,84","13,12","0,068734775",0
+"1718881","17",Tocantins,"18881",Santa Maria do Tocantins,Norte,https://www.santamariadotocantins.to.gov.br/,Sim,Sim,Apto,"2680","1412,318","1,9","0,069311962",0
+"1100080","11",Rondônia,"00080",Costa Marques,Norte,https://www.costamarques.ro.gov.br/,Sim,Sim,Apto,"12627","4987,177","2,53","0,070106434",0
+"1500107","15",Pará,"00107",Abaetetuba,Norte,https://abaetetuba.pa.gov.br/,Sim,Sim,Apto,"158188","1610,654","98,21","0,070176608",0
+"3512308","35",São Paulo,"12308",Conchas,Sudeste,https://www.conchas.sp.gov.br/,Sim,Sim,Apto,"15232","466,12","32,68","0,001691649",0
+"3303856","33",Rio de Janeiro,"03856",Paty do Alferes,Sudeste,https://www.patydoalferes.rj.gov.br/,Sim,Sim,Apto,"29619","314,341","94,23","0,002604657",0
+"3162302","31",Minas Gerais,"62302",São João da Mata,Sudeste,https://www.saojoaodamata.mg.gov.br/,Sim,Sim,Apto,"2914","120,536","24,18","0,003152686",0
+"3115409","31",Minas Gerais,"15409",Catas Altas da Noruega,Sudeste,https://www.catasaltasdanoruega.mg.gov.br/,Sim,Sim,Apto,"3110","141,622","21,96","0,003462717",0
+"3532900","35",São Paulo,"32900",Nova Europa,Sudeste,https://www.novaeuropa.sp.gov.br/,Sim,Sim,Apto,"9311","160,25","58,1","0,003549452",0
+"3515103","35",São Paulo,"15103",Embu-Guaçu,Sudeste,https://www.embuguacu.sp.gov.br/,Sim,Sim,Apto,"66970","155,641","430,29","0,003777668",0
+"3520905","35",São Paulo,"20905",Ipaussu,Sudeste,https://www.ipaussu.sp.gov.br/,Sim,Sim,Apto,"13712","209,554","65,43","0,004156175",0
+"3554409","35",São Paulo,"54409",Terra Roxa,Sudeste,https://www.terraroxa.sp.gov.br/,Sim,Sim,Apto,"7904","221,541","35,68","0,004806752",0
+"3129806","31",Minas Gerais,"29806",Ibirité,Sudeste,https://www.ibirite.mg.gov.br/,Sim,Sim,Apto,"170537","72,395","2355,65","0,00509639",0
+"3200409","32",Espírito Santo,"00409",Anchieta,Sudeste,https://www.anchieta.es.gov.br/,Sim,Sim,Apto,"29984","409,691","73,19","0,005448181",0
+"3530904","35",São Paulo,"30904",Mombuca,Sudeste,https://www.mombuca.sp.gov.br/,Sim,Sim,Apto,"3722","133,698","27,84","0,006375724",0
+"3300951","33",Rio de Janeiro,"00951",Comendador Levy Gasparian,Sudeste,https://www.levygasparian.rj.gov.br/,Sim,Sim,Apto,"8741","108,639","80,46","0,006417976",0
+"3128402","31",Minas Gerais,"28402",Guarani,Sudeste,https://www.guarani.mg.gov.br/,Sim,Sim,Apto,"7714","264,194","29,2","0,007705251",0
+"3154408","31",Minas Gerais,"54408",Ressaquinha,Sudeste,https://www.ressaquinha.mg.gov.br/,Sim,Sim,Apto,"4548","183,062","24,84","0,008240082",0
+"3149200","31",Minas Gerais,"49200",Pedrinópolis,Sudeste,https://www.pedrinopolis.mg.gov.br/,Sim,Sim,Apto,"3344","357,891","9,34","0,009665354",0
+"3539608","35",São Paulo,"39608",Planalto,Sudeste,https://www.planalto.sp.gov.br/,Sim,Sim,Apto,"4389","289,825","15,14","0,009903286",0
+"3142700","31",Minas Gerais,"42700",Montalvânia,Sudeste,https://www.montalvania.mg.gov.br/,Sim,Sim,Apto,"14060","1503,755","9,35","0,010811127",0
+"3160801","31",Minas Gerais,"60801",São Bento Abade,Sudeste,https://www.saobentoabade.mg.gov.br/,Sim,Sim,Apto,"4713","80,403","58,62","0,011209009",0
+"3544103","35",São Paulo,"44103",Rio Grande da Serra,Sudeste,https://www.riograndedaserra.sp.gov.br/,Sim,Sim,Apto,"44170","36,341","1215,43","0,011435621",0
+"3553906","35",São Paulo,"53906",Tarabai,Sudeste,https://www.tarabai.sp.gov.br/,Sim,Sim,Apto,"6536","201,385","32,46","0,011961855",0
+"3500808","35",São Paulo,"00808",Alfredo Marcondes,Sudeste,https://www.alfredomarcondes.sp.gov.br/,Sim,Sim,Apto,"4445","118,915","37,38","0,013289182",0
+"3159308","31",Minas Gerais,"59308",Santa Rita de Jacutinga,Sudeste,https://srjacutinga.mg.gov.br/,Sim,Sim,Apto,"4755","420,94","11,3","0,013594298",0
+"3156502","31",Minas Gerais,"56502",Rubelita,Sudeste,https://www.rubelita.mg.gov.br/,Sim,Sim,Apto,"5679","1110,295","5,11","0,013952083",0
+"3149804","31",Minas Gerais,"49804",Perdizes,Sudeste,https://www.perdizes.mg.gov.br/,Sim,Sim,Apto,"17151","2451,112","7","0,014299412",0
+"3155405","31",Minas Gerais,"55405",Rio Novo,Sudeste,https://www.rionovo.mg.gov.br/,Sim,Sim,Apto,"8518","209,31","40,7","0,014509064",0
+"3152131","31",Minas Gerais,"52131",Ponto Chique,Sudeste,https://www.pontochique.mg.gov.br/,Sim,Sim,Apto,"3747","602,799","6,22","0,016021309",0
+"3170008","31",Minas Gerais,"70008",Ubaí,Sudeste,https://www.ubai.mg.gov.br/,Sim,Sim,Apto,"11708","820,524","14,27","0,01814761",0
+"3515657","35",São Paulo,"15657",Fernão,Sudeste,https://www.fernao.sp.gov.br/,Sim,Sim,Apto,"1656","100,504","16,48","0,018817499",0
+"3145356","31",Minas Gerais,"45356",Novo Oriente de Minas,Sudeste,https://www.novoorientedeminas.mg.gov.br/,Sim,Sim,Apto,"10275","755,151","13,61","0,019212304",0
+"3130101","31",Minas Gerais,"30101",Igarapé,Sudeste,https://www.igarape.mg.gov.br/,Sim,Sim,Apto,"45847","110,942","413,25","0,019518969",0
+"3127404","31",Minas Gerais,"27404",Gonçalves,Sudeste,https://www.goncalves.mg.gov.br/,Sim,Sim,Apto,"4727","187,353","25,23","0,019543946",0
+"3555604","35",São Paulo,"55604",Uchoa,Sudeste,https://www.uchoa.sp.gov.br/,Sim,Sim,Apto,"10394","252,434","41,18","0,01999159",0
+"3146404","31",Minas Gerais,"46404",Paineiras,Sudeste,https://www.paineiras.mg.gov.br/,Sim,Sim,Apto,"4224","637,309","6,63","0,020088285",0
+"3127339","31",Minas Gerais,"27339",Gameleiras,Sudeste,https://www.gameleiras.mg.gov.br/,Sim,Sim,Apto,"4793","1733,203","2,77","0,020945942",0
+"3203346","32",Espírito Santo,"03346",Marechal Floriano,Sudeste,https://www.marechalfloriano.es.gov.br/,Sim,Sim,Apto,"17641","285,495","61,79","0,021092633",0
+"3133808","31",Minas Gerais,"33808",Itaúna,Sudeste,https://www.itauna.mg.gov.br/,Sim,Sim,Apto,"97669","495,769","197,01","0,022746956",0
+"3508603","35",São Paulo,"08603",Cachoeira Paulista,Sudeste,https://www.cachoeirapaulista.sp.gov.br/,Sim,Sim,Apto,"31564","287,99","109,6","0,023431649",0
+"3519808","35",São Paulo,"19808",Icém,Sudeste,https://www.icem.sp.gov.br/,Sim,Sim,Apto,"7819","362,355","21,58","0,0244897",0
+"3145901","31",Minas Gerais,"45901",Ouro Branco,Sudeste,https://www.ourobranco.mg.gov.br/,Sim,Sim,Apto,"38724","258,726","149,67","0,025116088",0
+"3539707","35",São Paulo,"39707",Platina,Sudeste,https://www.platina.sp.gov.br/,Sim,Sim,Apto,"3025","327,48","9,24","0,026275206",0
+"3118007","31",Minas Gerais,"18007",Congonhas,Sudeste,https://www.congonhas.mg.gov.br/,Sim,Sim,Apto,"52890","304,067","173,94","0,026812202",0
+"3534104","35",São Paulo,"34104",Oriente,Sudeste,https://www.oriente.sp.gov.br/,Sim,Sim,Apto,"6085","218,668","27,83","0,027453881",0
+"3553401","35",São Paulo,"53401",Tanabi,Sudeste,https://www.tanabi.sp.gov.br/,Sim,Sim,Apto,"25265","747,218","33,81","0,027705699",0
+"3200102","32",Espírito Santo,"00102",Afonso Cláudio,Sudeste,https://www.afonsoclaudio.es.gov.br/,Sim,Sim,Apto,"30684","941,188","32,6","0,027760524",0
+"3507803","35",São Paulo,"07803",Brodowski,Sudeste,https://www.brodowski.sp.gov.br/,Sim,Sim,Apto,"25201","278,458","90,5","0,028285927",0
+"3141207","31",Minas Gerais,"41207",Matutina,Sudeste,https://www.matutina.mg.gov.br/,Sim,Sim,Apto,"3814","260,957","14,62","0,028691244",0
+"3540101","35",São Paulo,"40101",Pongaí,Sudeste,https://www.pongai.sp.gov.br/,Sim,Sim,Apto,"3395","183,399","18,51","0,029195103",0
+"3115607","31",Minas Gerais,"15607",Cedro do Abaeté,Sudeste,https://www.cedrodoabaete.mg.gov.br/,Sim,Sim,Apto,"1081","283,211","3,82","0,029288822",0
+"3519204","35",São Paulo,"19204",Iacri,Sudeste,https://www.iacri.sp.gov.br/,Sim,Sim,Apto,"6131","321,948","19,04","0,029333354",0
+"3158508","31",Minas Gerais,"58508",Santana de Pirapama,Sudeste,https://santanadepirapama.mg.gov.br/,Sim,Sim,Apto,"7030","1255,832","5,6","0,029647853",0
+"3539806","35",São Paulo,"39806",Poá,Sudeste,https://www.poa.sp.gov.br/,Sim,Sim,Apto,"103765","17,264","6010,48","0,029754831",0
+"3524808","35",São Paulo,"24808",Jales,Sudeste,https://www.jales.sp.gov.br/,Sim,Sim,Apto,"48776","368,574","132,34","0,029840936",0
+"3154101","31",Minas Gerais,"54101",Recreio,Sudeste,https://www.recreio.mg.gov.br/,Sim,Sim,Apto,"11007","234,296","46,98","0,030331524",0
+"3168606","31",Minas Gerais,"68606",Teófilo Otoni,Sudeste,https://www.teofilootoni.mg.gov.br/,Sim,Sim,Apto,"137418","3242,27","42,38","0,031972938",0
+"3170701","31",Minas Gerais,"70701",Varginha,Sudeste,https://www.varginha.mg.gov.br/,Sim,Sim,Apto,"136467","395,396","345,14","0,033280754",0
+"3109600","31",Minas Gerais,"09600",Cachoeira da Prata,Sudeste,https://www.cachoeiradaprata.mg.gov.br/,Sim,Sim,Apto,"3693","61,381","60,17","0,034213327",0
+"3145505","31",Minas Gerais,"45505",Olímpio Noronha,Sudeste,https://www.olimpionoronha.mg.gov.br/,Sim,Sim,Apto,"2555","54,633","46,77","0,034710528",0
+"3524907","35",São Paulo,"24907",Jambeiro,Sudeste,https://www.jambeiro.sp.gov.br/,Sim,Sim,Apto,"6397","184,413","34,69","0,034953705",0
+"3115805","31",Minas Gerais,"15805",Centralina,Sudeste,https://www.centralina.mg.gov.br/,Sim,Sim,Apto,"10207","322,385","31,66","0,035192996",0
+"3115102","31",Minas Gerais,"15102",Cássia,Sudeste,https://www.cassia.mg.gov.br/,Sim,Sim,Apto,"17155","665,802","25,77","0,035972667",0
+"3540853","35",São Paulo,"40853",Pracinha,Sudeste,https://www.pracinha.sp.gov.br/,Sim,Sim,Apto,"2578","63,054","40,89","0,036719833",0
+"3108008","31",Minas Gerais,"08008",Bom Sucesso,Sudeste,https://www.bomsucesso.mg.gov.br/,Sim,Sim,Apto,"17151","705,046","24,33","0,038123404",0
+"3117702","31",Minas Gerais,"17702",Conceição do Rio Verde,Sudeste,https://www.conceicaodorioverde.mg.gov.br/,Sim,Sim,Apto,"12541","369,681","33,92","0,038264206",0
+"3524600","35",São Paulo,"24600",Jacupiranga,Sudeste,https://www.jacupiranga.sp.gov.br/,Sim,Sim,Apto,"16097","704,189","22,86","0,03834283",0
+"3302502","33",Rio de Janeiro,"02502",Magé,Sudeste,https://mage.rj.gov.br/,Sim,Sim,Apto,"228127","390,775","583,78","0,038508261",0
+"3131505","31",Minas Gerais,"31505",Ipuiúna,Sudeste,https://www.ipuiuna.mg.gov.br/,Sim,Sim,Apto,"9135","298,195","30,63","0,039074529",0
+"3202009","32",Espírito Santo,"02009",Dores do Rio Preto,Sudeste,https://www.pmdrp.es.gov.br/,Sim,Sim,Apto,"6596","159,298","41,41","0,039125526",0
+"3109808","31",Minas Gerais,"09808",Cachoeira Dourada,Sudeste,https://www.cachoeiradourada.mg.gov.br/,Sim,Sim,Apto,"2315","203,07","11,4","0,039585275",0
+"3140530","31",Minas Gerais,"40530",Martins Soares,Sudeste,https://www.martinssoares.mg.gov.br/,Sim,Sim,Apto,"8396","113,268","74,13","0,039711927",0
+"3162575","31",Minas Gerais,"62575",São João do Manteninha,Sudeste,https://www.saojoaodomanteninha.mg.gov.br/,Sim,Sim,Apto,"5331","137,928","38,65","0,040292101",0
+"3144904","31",Minas Gerais,"44904",Nova Módica,Sudeste,https://www.novamodica.mg.gov.br/,Sim,Sim,Apto,"3663","375,973","9,74","0,040829574",0
+"3170057","31",Minas Gerais,"70057",Ubaporanga,Sudeste,https://www.ubaporanga.mg.gov.br/,Sim,Sim,Apto,"13017","189,045","68,86","0,041582144",0
+"3169059","31",Minas Gerais,"69059",Tocos do Moji,Sudeste,https://www.tocosdomoji.mg.gov.br/,Sim,Sim,Apto,"3826","114,705","33,36","0,042265831",0
+"3108701","31",Minas Gerais,"08701",Brás Pires,Sudeste,https://www.braspires.mg.gov.br/,Sim,Sim,Apto,"4260","223,351","19,07","0,043869503",0
+"3520426","35",São Paulo,"20426",Ilha Comprida,Sudeste,https://www.ilhacomprida.sp.gov.br/,Sim,Sim,Apto,"13419","196,567","68,27","0,044099972",0
+"3103801","31",Minas Gerais,"03801",Arapuá,Sudeste,https://www.arapua.mg.gov.br/,Sim,Sim,Apto,"2631","173,894","15,13","0,044220912",0
+"3101300","31",Minas Gerais,"01300",Alagoa,Sudeste,https://www.alagoa.mg.gov.br/,Sim,Sim,Apto,"2749","161,356","17,04","0,044368685",0
+"3519709","35",São Paulo,"19709",Ibiúna,Sudeste,https://www.ibiuna.sp.gov.br/,Sim,Sim,Apto,"75605","1058,082","71,45","0,045171285",0
+"3163904","31",Minas Gerais,"63904",São Pedro da União,Sudeste,https://www.saopedrodauniao.mg.gov.br/,Sim,Sim,Apto,"4885","260,827","18,73","0,045440178",0
+"3126752","31",Minas Gerais,"26752",Franciscópolis,Sudeste,https://www.franciscopolis.mg.gov.br/,Sim,Sim,Apto,"5034","717,087","7,02","0,04589667",0
+"3140852","31",Minas Gerais,"40852",Matias Cardoso,Sudeste,https://www.matiascardoso.mg.gov.br/,Sim,Sim,Apto,"8895","1940,598","4,58","0,046023445",0
+"3120201","31",Minas Gerais,"20201",Cristais,Sudeste,https://www.cristais.mg.gov.br/,Sim,Sim,Apto,"12197","628,434","19,41","0,046395859",0
+"3512100","35",São Paulo,"12100",Colômbia,Sudeste,https://www.colombia.sp.gov.br/,Sim,Sim,Apto,"6629","728,648","9,1","0,047640864",0
+"3136504","31",Minas Gerais,"36504",Jordânia,Sudeste,https://www.jordania.mg.gov.br/,Sim,Sim,Apto,"10304","546,705","18,85","0,048053297",0
+"3513900","35",São Paulo,"13900",Divinolândia,Sudeste,https://www.divinolandia.sp.gov.br/,Sim,Sim,Apto,"11158","223,749","49,87","0,048205899",0
+"3544509","35",São Paulo,"44509",Rubinéia,Sudeste,https://www.rubineia.sp.gov.br/,Sim,Sim,Apto,"3833","242,877","15,78","0,048447587",0
+"3128501","31",Minas Gerais,"28501",Guarará,Sudeste,https://www.guarara.mg.gov.br/,Sim,Sim,Apto,"3149","88,655","35,52","0,049972051",0
+"3538105","35",São Paulo,"38105",Pindorama,Sudeste,https://www.pindorama.sp.gov.br/,Sim,Sim,Apto,"14542","184,825","78,68","0,051074422",0
+"3550001","35",São Paulo,"50001",São Luiz do Paraitinga,Sudeste,https://www.saoluizdoparaitinga.sp.gov.br/,Sim,Sim,Apto,"10337","617,315","16,75","0,051155779",0
+"3506904","35",São Paulo,"06904",Bofete,Sudeste,https://www.bofete.sp.gov.br/,Sim,Sim,Apto,"10460","653,541","16,01","0,05163513",0
+"3301405","33",Rio de Janeiro,"01405",Conceição de Macabu,Sudeste,https://www.conceicaodemacabu.rj.gov.br/,Sim,Sim,Apto,"21104","338,26","62,39","0,052619047",0
+"3549953","35",São Paulo,"49953",São Lourenço da Serra,Sudeste,https://www.saolourencodaserra.sp.gov.br/,Sim,Sim,Apto,"16067","186,456","86,17","0,05356073",0
+"3550605","35",São Paulo,"50605",São Roque,Sudeste,https://www.saoroque.sp.gov.br/,Sim,Sim,Apto,"79484","306,908","258,98","0,055463854",0
+"3137403","31",Minas Gerais,"37403",Lagoa Dourada,Sudeste,https://www.lagoadourada.mg.gov.br/,Sim,Sim,Apto,"12769","476,693","26,79","0,055539705",0
+"3141009","31",Minas Gerais,"41009",Mato Verde,Sudeste,https://www.matoverde.mg.gov.br/,Sim,Sim,Apto,"12038","472,245","25,49","0,05812699",0
+"3508702","35",São Paulo,"08702",Caconde,Sudeste,https://www.caconde.sp.gov.br/,Sim,Sim,Apto,"17101","468,214","36,52","0,058137271",0
+"3520004","35",São Paulo,"20004",Igaraçu do Tietê,Sudeste,https://www.igaracudotiete.sp.gov.br/,Sim,Sim,Apto,"23106","97,747","236,39","0,063935766",0
+"3168903","31",Minas Gerais,"68903",Tiros,Sudeste,https://www.tiros.mg.gov.br/,Sim,Sim,Apto,"7883","2091,774","3,77","0,064511214",0
+"3103751","31",Minas Gerais,"03751",Araporã,Sudeste,https://www.arapora.mg.gov.br/,Sim,Sim,Apto,"8479","294,354","28,81","0,065165568",0
+"3521606","35",São Paulo,"21606",Irapuru,Sudeste,https://www.irapuru.sp.gov.br/,Sim,Sim,Apto,"7085","214,461","33,04","0,065961227",0
+"3161304","31",Minas Gerais,"61304",São Francisco de Sales,Sudeste,https://www.saofranciscodesales.mg.gov.br/,Sim,Sim,Apto,"5732","1128,864","5,08","0,066323839",0
+"3137502","31",Minas Gerais,"37502",Lagoa Formosa,Sudeste,https://www.lagoaformosa.mg.gov.br/,Sim,Sim,Apto,"18904","840,92","22,48","0,067528785",0
+"3107109","31",Minas Gerais,"07109",Boa Esperança,Sudeste,https://www.boaesperanca.mg.gov.br/,Sim,Sim,Apto,"39848","860,669","46,3","0,067610478",0
+"3118601","31",Minas Gerais,"18601",Contagem,Sudeste,https://portal.contagem.mg.gov.br/,Sim,Sim,Apto,"621863","194,746","3193,2","0,067802431",0
+"3103603","31",Minas Gerais,"03603",Arantina,Sudeste,https://www.arantina.mg.gov.br/,Sim,Sim,Apto,"2915","89,42","32,6","0,067815313",0
+"3113008","31",Minas Gerais,"13008",Caraí,Sudeste,https://www.carai.mg.gov.br/,Sim,Sim,Apto,"19548","1242,345","15,73","0,069919522",0
+"3552007","35",São Paulo,"52007",Silveiras,Sudeste,https://www.silveiras.sp.gov.br/,Sim,Sim,Apto,"6186","414,782","14,91","0,070203621",0
+"3550506","35",São Paulo,"50506",São Pedro do Turvo,Sudeste,https://www.saopedrodoturvo.sp.gov.br/,Sim,Sim,Apto,"7217","731,221","9,87","0,071009369",0
+"4309050","43",Rio Grande do Sul,"09050",Glorinha,Sul,https://glorinha.rs.gov.br/,Sim,Sim,Apto,"7658","323,955","23,64","8,75873E-05",0
+"4120903","41",Paraná,"20903",Quedas do Iguaçu,Sul,https://www.quedasdoiguacu.pr.gov.br/,Sim,Sim,Apto,"30738","821,503","37,42","0,0006193",0
+"4210308","42",Santa Catarina,"10308",Major Vieira,Sul,https://www.majorvieira.sc.gov.br/,Sim,Sim,Apto,"7425","520,816","14,26","0,001314525",0
+"4301636","43",Rio Grande do Sul,"01636",Balneário Pinhal,Sul,https://www.balneariopinhal.rs.gov.br/,Sim,Sim,Apto,"14955","102,387","146,06","0,002115235",0
+"4109708","41",Paraná,"09708",Ibaiti,Sul,https://www.ibaiti.pr.gov.br/,Sim,Sim,Apto,"28830","898,221","32,1","0,002611448",0
+"4300307","43",Rio Grande do Sul,"00307",Alecrim,Sul,https://www.alecrim.rs.gov.br/,Sim,Sim,Apto,"6123","316,394","19,35","0,00286605",0
+"4128658","41",Paraná,"28658",Virmond,Sul,https://www.virmond.pr.gov.br/,Sim,Sim,Apto,"3811","249,094","15,3","0,004413275",0
+"4309506","43",Rio Grande do Sul,"09506",Guarani das Missões,Sul,https://www.guaranidasmissoes.rs.gov.br/,Sim,Sim,Apto,"7415","290,7","25,51","0,004655107",0
+"4302402","43",Rio Grande do Sul,"02402",Bom Retiro do Sul,Sul,https://www.bomretirodosul.rs.gov.br/,Sim,Sim,Apto,"12294","102,54","119,89","0,004861874",0
+"4209300","42",Santa Catarina,"09300",Lages,Sul,https://www.lages.sc.gov.br/,Sim,Sim,Apto,"164981","2637,66","62,55","0,005086023",0
+"4205357","42",Santa Catarina,"05357",Flor do Sertão,Sul,https://www.flordosertao.sc.gov.br/,Sim,Sim,Apto,"1783","58,457","30,5","0,006472775",0
+"4212700","42",Santa Catarina,"12700",Petrolândia,Sul,https://www.petrolandia.sc.gov.br/,Sim,Sim,Apto,"6716","306,76","21,89","0,006742859",0
+"4200606","42",Santa Catarina,"00606",Águas Mornas,Sul,https://www.aguasmornas.sc.gov.br/,Sim,Sim,Apto,"6743","326,66","20,64","0,006769456",0
+"4307500","43",Rio Grande do Sul,"07500",Espumoso,Sul,https://www.espumoso.rs.gov.br/,Sim,Sim,Apto,"15173","783,642","19,36","0,007514292",0
+"4125001","41",Paraná,"25001",São João do Ivaí,Sul,https://www.saojoaodoivai.pr.gov.br/,Sim,Sim,Apto,"10667","353,331","30,19","0,00777711",0
+"4301750","43",Rio Grande do Sul,"01750",Barão do Triunfo,Sul,https://www.baraodotriunfo.rs.gov.br/,Sim,Sim,Apto,"5889","436,101","13,5","0,010413192",0
+"4107546","41",Paraná,"07546",Espigão Alto do Iguaçu,Sul,https://www.espigaoaltodoiguacu.pr.gov.br/,Sim,Sim,Apto,"4797","326,44","14,69","0,012225437",0
+"4115754","41",Paraná,"15754",Mauá da Serra,Sul,https://www.mauadaserra.pr.gov.br/,Sim,Sim,Apto,"9383","108,324","86,62","0,012411513",0
+"4203204","42",Santa Catarina,"03204",Camboriú,Sul,https://www.camboriu.sc.gov.br/,Sim,Sim,Apto,"103074","210,568","489,5","0,01337215",0
+"4215455","42",Santa Catarina,"15455",Sangão,Sul,https://www.sangao.sc.gov.br/,Sim,Sim,Apto,"12882","82,984","155,23","0,014810207",0
+"4302352","43",Rio Grande do Sul,"02352",Bom Princípio,Sul,https://www.bomprincipio.rs.gov.br/,Sim,Sim,Apto,"13142","88,66","148,23","0,016768554",0
+"4118451","41",Paraná,"18451",Pato Bragado,Sul,https://www.patobragado.pr.gov.br/,Sim,Sim,Apto,"5733","135,6","42,28","0,018043937",0
+"4213302","42",Santa Catarina,"13302",Ponte Alta,Sul,https://www.pontealta.sc.gov.br/,Sim,Sim,Apto,"4437","575,17","7,71","0,01986235",0
+"4126603","41",Paraná,"26603",Siqueira Campos,Sul,https://www.siqueiracampos.pr.gov.br/,Sim,Sim,Apto,"22811","278,035","82,04","0,020555582",0
+"4312906","43",Rio Grande do Sul,"12906",Nova Bassano,Sul,https://www.novabassano.rs.gov.br/,Sim,Sim,Apto,"9649","211,611","45,6","0,020772109",0
+"4126207","41",Paraná,"26207",Sapopema,Sul,https://www.sapopema.pr.gov.br/,Sim,Sim,Apto,"6695","677,609","9,88","0,021048041",0
+"4103107","41",Paraná,"03107",Bocaiúva do Sul,Sul,https://www.bocaiuvadosul.pr.gov.br/,Sim,Sim,Apto,"13299","825,665","16,11","0,021568593",0
+"4104303","41",Paraná,"04303",Campo Mourão,Sul,https://www.campomourao.pr.gov.br/,Sim,Sim,Apto,"99432","749,637","132,64","0,021617954",0
+"4210209","42",Santa Catarina,"10209",Major Gercino,Sul,https://www.majorgercino.sc.gov.br/,Sim,Sim,Apto,"3214","306,058","10,5","0,023707948",0
+"4322608","43",Rio Grande do Sul,"22608",Venâncio Aires,Sul,https://www.venancioaires.rs.gov.br/,Sim,Sim,Apto,"68763","772,588","89","0,02403379",0
+"4109203","41",Paraná,"09203",Guaraci,Sul,https://www.guaraci.pr.gov.br/,Sim,Sim,Apto,"4748","211,68","22,43","0,028842224",0
+"4310579","43",Rio Grande do Sul,"10579",Itapuca,Sul,https://www.itapuca.rs.gov.br/,Sim,Sim,Apto,"1937","184,673","10,49","0,029450491",0
+"4108007","41",Paraná,"08007",Florestópolis,Sul,https://www.florestopolis.pr.gov.br/,Sim,Sim,Apto,"11446","246,853","46,37","0,031152076",0
+"4310108","43",Rio Grande do Sul,"10108",Igrejinha,Sul,https://www.igrejinha.rs.gov.br/,Sim,Sim,Apto,"32808","138,303","237,22","0,032058086",0
+"4121901","41",Paraná,"21901",Ribeirão do Pinhal,Sul,https://www.ribeiraodopinhal.pr.gov.br/,Sim,Sim,Apto,"13060","374,732","34,85","0,032151136",0
+"4103453","41",Paraná,"03453",Cafelândia,Sul,https://www.cafelandia.pr.gov.br/,Sim,Sim,Apto,"18997","274,904","69,1","0,0326141",0
+"4115408","41",Paraná,"15408",Marmeleiro,Sul,https://www.marmeleiro.pr.gov.br/,Sim,Sim,Apto,"15901","387,612","41,02","0,035488722",0
+"4308078","43",Rio Grande do Sul,"08078",Fazenda Vilanova,Sul,https://www.fazendavilanova.rs.gov.br/,Sim,Sim,Apto,"4291","84,794","50,6","0,035875238",0
+"4303608","43",Rio Grande do Sul,"03608",Cambará do Sul,Sul,https://www.cambaradosul.rs.gov.br/,Sim,Sim,Apto,"6361","1181,811","5,38","0,036023428",0
+"4119806","41",Paraná,"19806",Planalto,Sul,https://www.planalto.pr.gov.br/,Sim,Sim,Apto,"14374","346,241","41,51","0,038124268",0
+"4320206","43",Rio Grande do Sul,"20206",Seberi,Sul,https://www.seberi.rs.gov.br/,Sim,Sim,Apto,"11950","300,827","39,72","0,040005899",0
+"4211801","42",Santa Catarina,"11801",Ouro,Sul,https://www.ouro.sc.gov.br/,Sim,Sim,Apto,"7032","213,543","32,93","0,040304589",0
+"4308904","43",Rio Grande do Sul,"08904",Getúlio Vargas,Sul,https://www.pmgv.rs.gov.br/site/,Sim,Sim,Apto,"16602","287,466","57,75","0,042600125",0
+"4120655","41",Paraná,"20655",Quarto Centenário,Sul,https://www.quartocentenario.pr.gov.br/,Sim,Sim,Apto,"4201","321,875","13,05","0,042749944",0
+"4218855","42",Santa Catarina,"18855",União do Oeste,Sul,https://www.uniaodooeste.sc.gov.br/,Sim,Sim,Apto,"2774","92,857","29,87","0,043585188",0
+"4104253","41",Paraná,"04253",Campo Magro,Sul,https://www.campomagro.pr.gov.br/,Sim,Sim,Apto,"30160","275,352","109,53","0,044969112",0
+"4302006","43",Rio Grande do Sul,"02006",Barros Cassal,Sul,https://www.barroscassal.rs.gov.br/,Sim,Sim,Apto,"9296","647,994","14,35","0,045292446",0
+"4312658","43",Rio Grande do Sul,"12658",Não-Me-Toque,Sul,https://www.naometoque.rs.gov.br/,Sim,Sim,Apto,"17898","361,689","49,48","0,046970489",0
+"4123006","41",Paraná,"23006",Salto do Lontra,Sul,https://www.saltodolontra.pr.gov.br/,Sim,Sim,Apto,"15223","312,717","48,68","0,048405361",0
+"4108809","41",Paraná,"08809",Guaíra,Sul,https://www.guaira.pr.gov.br/,Sim,Sim,Apto,"32097","563,742","56,94","0,048753569",0
+"4305306","43",Rio Grande do Sul,"05306",Chapada,Sul,https://www.chapada.rs.gov.br/,Sim,Sim,Apto,"9540","684,247","13,94","0,049187184",0
+"4314175","43",Rio Grande do Sul,"14175",Pedras Altas,Sul,https://www.pedrasaltas.rs.gov.br/,Sim,Sim,Apto,"2061","1373,985","1,5","0,049373441",0
+"4102901","41",Paraná,"02901",Bituruna,Sul,https://www.bituruna.pr.gov.br/,Sim,Sim,Apto,"15533","1234,946","12,58","0,049764665",0
+"4316451","43",Rio Grande do Sul,"16451",Salto do Jacuí,Sul,https://www.saltodojacui.rs.gov.br/,Sim,Sim,Apto,"10203","507,698","20,1","0,05029394",0
+"4300208","43",Rio Grande do Sul,"00208",Ajuricaba,Sul,https://www.ajuricaba.rs.gov.br/,Sim,Sim,Apto,"6720","322,674","20,83","0,050703702",0
+"4322327","43",Rio Grande do Sul,"22327",Turuçu,Sul,https://www.turucu.rs.gov.br/,Sim,Sim,Apto,"3419","253,635","13,48","0,051048776",0
+"4123204","41",Paraná,"23204",Santa Cecília do Pavão,Sul,https://www.santaceciliadopavao.pr.gov.br/,Sim,Sim,Apto,"3365","105,076","32,02","0,052339988",0
+"4126504","41",Paraná,"26504",Sertanópolis,Sul,https://www.sertanopolis.pr.gov.br/,Sim,Sim,Apto,"15930","505,532","31,51","0,05238588",0
+"4101655","41",Paraná,"01655",Arapuã,Sul,https://www.arapua.pr.gov.br/,Sim,Sim,Apto,"3527","217,371","16,23","0,054652652",0
+"4300638","43",Rio Grande do Sul,"00638",Amaral Ferrador,Sul,https://www.amaralferrador.rs.gov.br/,Sim,Sim,Apto,"5310","505,983","10,49","0,055654453",0
+"4302709","43",Rio Grande do Sul,"02709",Butiá,Sul,https://www.butia.rs.gov.br/,Sim,Sim,Apto,"19084","752,187","25,37","0,056185117",0
+"4209805","42",Santa Catarina,"09805",Leoberto Leal,Sul,https://www.leobertoleal.sc.gov.br/,Sim,Sim,Apto,"3330","293,6","11,34","0,056299009",0
+"4103404","41",Paraná,"03404",Cafeara,Sul,https://www.cafeara.pr.gov.br/,Sim,Sim,Apto,"2627","185,8","14,14","0,058265627",0
+"4128534","41",Paraná,"28534",Ventania,Sul,https://www.ventania.pr.gov.br/,Sim,Sim,Apto,"9681","819,334","11,82","0,059693067",0
+"4111258","41",Paraná,"11258",Itaperuçu,Sul,https://itaperucu.pr.gov.br/,Sim,Sim,Apto,"31217","322,991","96,65","0,060634245",0
+"4214805","42",Santa Catarina,"14805",Rio do Sul,Sul,https://www.riodosul.sc.gov.br/,Sim,Sim,Apto,"72587","260,817","278,31","0,061259868",0
+"4111209","41",Paraná,"11209",Itapejara d'Oeste,Sul,https://www.itapejaradoeste.pr.gov.br/,Sim,Sim,Apto,"12344","254,014","48,6","0,061396914",0
+"4311254","43",Rio Grande do Sul,"11254",Lagoão,Sul,https://www.lagoao.rs.gov.br/,Sim,Sim,Apto,"5341","387,486","13,78","0,061399428",0
+"4108106","41",Paraná,"08106",Flórida,Sul,https://florida.pr.gov.br/,Sim,Sim,Apto,"2652","83,046","31,93","0,062257782",0
+"4109401","41",Paraná,"09401",Guarapuava,Sul,https://guarapuava.pr.gov.br/,Sim,Sim,Apto,"182093","3168,087","57,48","0,063703171",0
+"4321634","43",Rio Grande do Sul,"21634",Três Arroios,Sul,https://tresarroios.rs.gov.br/,Sim,Sim,Apto,"2591","148,601","17,44","0,064024149",0
+"4111704","41",Paraná,"11704",Jaboti,Sul,https://www.jaboti.pr.gov.br/,Sim,Sim,Apto,"5427","139,277","38,97","0,064699151",0
+"4319109","43",Rio Grande do Sul,"19109",São Martinho,Sul,https://www.saomartinho.rs.gov.br/site,Sim,Sim,Apto,"5481","171,245","32,01","0,066381376",0
+"4321436","43",Rio Grande do Sul,"21436",Terra de Areia,Sul,https://www.terradeareia.rs.gov.br/,Sim,Sim,Apto,"10334","142,304","72,62","0,066465254",0
+"4101101","41",Paraná,"01101",Andirá,Sul,https://andira.pr.gov.br/,Sim,Sim,Apto,"19878","235,944","84,25","0,066716891",0
+"4300455","43",Rio Grande do Sul,"00455",Alegria,Sul,https://www.pmalegria.rs.gov.br/site,Sim,Sim,Apto,"3651","172,794","21,13","0,068208814",0
+"4300570","43",Rio Grande do Sul,"00570",Alto Feliz,Sul,https://www.altofeliz.rs.gov.br/web/,Sim,Sim,Apto,"3072","78,175","39,3","0,06913189",0
