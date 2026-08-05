@@ -1,0 +1,30 @@
+# Arquivos temporários do Windows
+Thumbs.db
+Desktop.ini
+
+# Arquivos temporários do Microsoft Office
+~$*.doc
+~$*.docx
+~$*.xls
+~$*.xlsx
+~$*.ppt
+~$*.pptx
+
+# Arquivos temporários e de backup
+*.tmp
+*.temp
+*.bak
+*.swp
+
+# Cache do Python
+__pycache__/
+*.py[cod]
+
+# Ambientes virtuais
+.venv/
+venv/
+env/
+
+# Configurações locais
+.env
+.env.*
