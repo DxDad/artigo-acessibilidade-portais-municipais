@@ -1,4 +1,4 @@
-# Anexo C — Relatório de Conferência da Rodada r01
+# apendice C — Relatório de Conferência da Rodada r01
 
 **Data de geração:** 2026-06-23 08:26:43  
 **Tabelas consultadas:** `tcc_unifal_base_amostral`, `tcc_unifal_execucoes`, `tcc_unifal_logs_validacao`  
