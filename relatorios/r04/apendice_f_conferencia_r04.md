@@ -1,4 +1,4 @@
-# Apendice F — Relatório de Conferência da Rodada r04
+# Apêndice F — Relatório de Conferência da Rodada r04
 
 **Data de geração:** 2026-07-14 09:23:32  
 **Tabelas consultadas:** `tcc_unifal_base_amostral`, `tcc_unifal_execucoes`, `tcc_unifal_logs_validacao`  
