@@ -1,4 +1,4 @@
-# apendice B — Relatório de Homologação da Rodada r00
+# Apêndice B — Relatório de Homologação da Rodada r00
 
 **Data de geração:** 2026-06-22 23:08:28  
 **Tabelas consultadas:** `tcc_unifal_base_amostral`, `tcc_unifal_execucoes`, `tcc_unifal_logs_validacao`  
