@@ -1,4 +1,4 @@
-# apendice E — Relatório de Conferência da Rodada r03
+# Apêndice E — Relatório de Conferência da Rodada r03
 
 **Data de geração:** 2026-07-07 07:50:38  
 **Tabelas consultadas:** `tcc_unifal_base_amostral`, `tcc_unifal_execucoes`, `tcc_unifal_logs_validacao`  
