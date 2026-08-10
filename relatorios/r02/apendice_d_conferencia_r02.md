@@ -1,4 +1,4 @@
-# apendice D — Relatório de Conferência da Rodada r02
+# Apêndice D — Relatório de Conferência da Rodada r02
 
 **Data de geração:** 2026-07-01 07:59:29  
 **Tabelas consultadas:** `tcc_unifal_base_amostral`, `tcc_unifal_execucoes`, `tcc_unifal_logs_validacao`  
